@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.scrollbar::-webkit-scrollbar {
+			width: 0px;
+			/* height: 8px; */
+		}
+	
+		.scrollbar::-webkit-scrollbar-track {
+			border-radius: 100vh;
+			background: #f7f4ed00;
+		}
+	
+		.scrollbar::-webkit-scrollbar-thumb {
+			background: #ffffffc5;
+			border-radius: 100vh;
+		}
+	
+		.scrollbar::-webkit-scrollbar-thumb:hover {
+			background: #ffffffa7;
+		}
+}
+
+@font-face {
+	font-family: "BOMBING";
+	src: url("../public/fonts/Bombing.ttf");
+}
+@font-face {
+	font-family: "Varsity";
+	src: url("../public/fonts/varsity_regular.ttf");
+}
+@font-face {
+	font-family: "Agharti";
+	src: url("../public/fonts/Agharti-RegularUltraCondensed.ttf");
+}
+@font-face {
+	font-family: "Minecraft";
+	src: url("../public/fonts/Minecraft.ttf");
+}
+@font-face {
+	font-family: "Coolvetica";
+	src: url("../public/fonts/coolvetica\ crammed\ rg.ttf");
+}
+@font-face {
+	font-family: "SFProDisplayBlack";
+	src: url("../public/fonts/SF-Pro-Display-Black.otf");
+}
+@font-face {
+	font-family: "SFProTextBold";
+	src: url("../public/fonts/SF-Pro-Text-Bold.otf");
+}
+@font-face {
+	font-family: "SFProTextHeavy";
+	src: url("../public/fonts/SF-Pro-Text-Heavy.otf");
+}
+@font-face {
+	font-family: "SFProTextRegular";
+	src: url("../public/fonts/SF-Pro-Text-Regular.otf");
+}
