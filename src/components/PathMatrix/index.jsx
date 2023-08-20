@@ -2,8 +2,17 @@ import PathCell from "../PathCell"
 
 export default function PathMatrix(props) {
     return(
-        <div className="bg-slate-400 h-100 flex justify-center">
-            <div className="w-[840px] grid grid-cols-7 grid-rows-4 m-20">
+        <div className="relative bg-gradient-to-t dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 from-gray-600 via-zinc-600 to-zinc-700 h-100 flex flex-col items-center justify-center">
+            <div className="absolute w-full h-[7px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-0"/>
+            <div className="absolute w-full h-[6px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[12px]"/>
+            <div className="absolute w-full h-[4px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[24px]"/>
+            <div className="absolute w-full h-[3px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[34px]"/>
+            <div className="absolute w-full h-[2px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[44px]"/>
+            <div className="absolute w-full h-[1px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[52px]"/>
+            <h1 className="text-center mt-20 font-minecraft text-[100px] bg-gradient-to-r bg-clip-text text-transparent 
+                        dark:from-blue-500 dark:via-cyan-400 dark:to-blue-500 from-red-500 via-amber-500 to-red-500 animate-text">PUZZLE</h1>
+
+            <div className="w-[840px] grid grid-cols-7 grid-rows-4 m-10">
                 {/* TODO GENERATE CELLS PROCEDURALLY AND RANDOMIZE ANGLES */}
                 <PathCell type="image" imageLabel="1-1" angle={0}/>
                 <PathCell type="image" imageLabel="1-2" angle={91}/>

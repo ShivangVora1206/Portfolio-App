@@ -18,7 +18,7 @@ export default function Stack(params) {
     }
 
     return (
-        <div className="relative flex flex-col h-[900px] sm:h-[1200px] md:h-[1200px] lg:h-[800px] items-center bg-gradient-to-br bg-opacity-25 from-gray-700 via-zinc-400 to-gray-600 dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950">
+        <div className="relative flex flex-col h-[900px] sm:h-[1200px] md:h-[1200px] lg:h-[800px] items-center bg-gradient-to-br bg-opacity-25 from-gray-700 via-zinc-400 to-gray-400 dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950">
             <h1 className=" dark:text-slate-100 text-zinc-100 flex mt-20 font-minecraft text-2xl w-full justify-center">MY TECH STACK</h1>
             <div className={`flex flex-col p-3 rounded-lg duration-200 ${clicked ? 'top-[500px] sm:top-[650px] md:top-[500px] lg:top-0 lg:translate-x-64 xl:translate-x-96 opacity-100' : ' opacity-0 translate-x-0'} h-[320px] w-[320px] sm:h-custom-xl-square-height sm:w-custom-xl-square-width md:w-custom-xl-square-width bg-slate-200 bg-opacity-30  absolute  md:mt-custom-top-margin  `}> {/*changes here added md*/}
                 <div className="flex flex-row justify-between text-slate-100"><h1 className="text-center ms-2 font-minecraft">PROJECTS USING {selectedTech}</h1>
@@ -61,7 +61,12 @@ export default function Stack(params) {
                 <div onClick={()=>{setSelectedTech("java".toUpperCase());getProjectsFromTech("java")}} className={`flex justify-center items-center h-100 w-100 dark:bg-violet-700 bg-red-600 hover:scale-90 hover:rounded-xl duration-200`}><Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['java']} size={3}/></div>
                 <div onClick={()=>{setSelectedTech("tailwind".toUpperCase());getProjectsFromTech("tailwind")}} className={`flex justify-center items-center h-100 w-100 dark:bg-violet-800 bg-red-500 hover:scale-90 hover:rounded-xl duration-200`}><BiLogoTailwindCss size={55} className="m-1 p-3 sm:p-1"/></div> */}
             </div>
-            
+            {/* <div className="absolute w-full h-[7px] bg-slate-900 bottom-0"/>
+            <div className="absolute w-full h-[6px] bg-slate-900 bottom-[12px]"/>
+            <div className="absolute w-full h-[4px] bg-slate-900 bottom-[24px]"/>
+            <div className="absolute w-full h-[3px] bg-slate-900 bottom-[34px]"/>
+            <div className="absolute w-full h-[2px] bg-slate-900 bottom-[44px]"/>
+            <div className="absolute w-full h-[1px] bg-slate-900 bottom-[52px]"/> */}
         </div>
     )
 }
