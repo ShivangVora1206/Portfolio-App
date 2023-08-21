@@ -18,7 +18,7 @@ export default function Stack(params) {
     }
 
     return (
-        <div className="relative flex flex-col h-[900px] sm:h-[1200px] md:h-[1200px] lg:h-[800px] items-center bg-gradient-to-br bg-opacity-25 from-gray-700 via-zinc-400 to-gray-400 dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950">
+        <div className="relative flex flex-col h-[900px] sm:h-[1200px] md:h-[1200px] lg:h-[800px] items-center bg-gradient-to-br bg-opacity-25 from-gray-800 via-zinc-600 to-zinc-600 dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950">
             <h1 className=" dark:text-slate-100 text-zinc-100 flex mt-20 font-minecraft text-2xl w-full justify-center">MY TECH STACK</h1>
             <div className={`flex flex-col p-3 rounded-lg duration-200 ${clicked ? 'top-[500px] sm:top-[650px] md:top-[500px] lg:top-0 lg:translate-x-64 xl:translate-x-96 opacity-100' : ' opacity-0 translate-x-0'} h-[320px] w-[320px] sm:h-custom-xl-square-height sm:w-custom-xl-square-width md:w-custom-xl-square-width bg-slate-200 bg-opacity-30  absolute  md:mt-custom-top-margin  `}> {/*changes here added md*/}
                 <div className="flex flex-row justify-between text-slate-100"><h1 className="text-center ms-2 font-minecraft">PROJECTS USING {selectedTech}</h1>

@@ -1,50 +1,42 @@
+import { useSelector } from "react-redux"
 import PathCell from "../PathCell"
+import Pattern from "../Pattern"
 
 export default function PathMatrix(props) {
+
+    let pathCells = [];
+    let angles = [0, 90, 180, 270, 91];
+    let difficulty = 2;
+
+        for (let i = 1; i < 5; i++) {
+            for (let j = 1; j < 8; j++) {
+                let angle = 0;
+                if((i+j)%difficulty === 0){
+                    angle = angles[Math.floor(Math.random() * angles.length)];
+                }
+                pathCells.push(<PathCell type="image" imageLabel={`${i}-${j}`} angle={angle}/>)
+            }
+            
+        }
+
     return(
-        <div className="relative bg-gradient-to-t dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 from-gray-600 via-zinc-600 to-zinc-700 h-100 flex flex-col items-center justify-center">
-            <div className="absolute w-full h-[7px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-0"/>
-            <div className="absolute w-full h-[6px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[12px]"/>
-            <div className="absolute w-full h-[4px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[24px]"/>
-            <div className="absolute w-full h-[3px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[34px]"/>
-            <div className="absolute w-full h-[2px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[44px]"/>
-            <div className="absolute w-full h-[1px] dark:bg-gradient-to-tl dark:from-gray-950 dark:via-zinc-900 dark:to-gray-950 bg-gray-400 top-[52px]"/>
-            <h1 className="text-center mt-20 font-minecraft text-[100px] bg-gradient-to-r bg-clip-text text-transparent 
+        <div className="relative bg-gradient-to-t dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 from-zinc-800 to-zinc-900 h-100 flex flex-col items-center justify-center">
+
+            <div id="trainsition-wave-pattern" className="absolute dark:opacity-0 w-full top-0"><Pattern/></div>
+
+            <h1 id="title" className="text-center mt-[200px] font-minecraft text-[100px] bg-gradient-to-r bg-clip-text text-transparent
                         dark:from-blue-500 dark:via-cyan-400 dark:to-blue-500 from-red-500 via-amber-500 to-red-500 animate-text">PUZZLE</h1>
+            
+            <h2 id="subtitle" className="text-slate-200 text-2xl font-minecraft"> Can you solve the below puzzle to reveal the hidden image ? </h2>
 
-            <div className="w-[840px] grid grid-cols-7 grid-rows-4 m-10">
-                {/* TODO GENERATE CELLS PROCEDURALLY AND RANDOMIZE ANGLES */}
-                <PathCell type="image" imageLabel="1-1" angle={0}/>
-                <PathCell type="image" imageLabel="1-2" angle={91}/>
-                <PathCell type="image" imageLabel="1-3" angle={0}/>
-                <PathCell type="image" imageLabel="1-4" angle={90}/>
-                <PathCell type="image" imageLabel="1-5" angle={0}/>
-                <PathCell type="image" imageLabel="1-6" angle={180}/>
-                <PathCell type="image" imageLabel="1-7" angle={0}/>
+            <div id="screen-size-alert-banner" className="absolute flex items-center rounded-xl border top-96 bg-zinc-700  h-[300px] w-[350px] sm:h-[300px] sm:w-[400px] md:opacity-0 md:w-0 md:h-0">
+                <h1 className="text-center m-5 text-slate-200 font-minecraft text-2xl">PLEASE USE A LARGER SCREEN TO VIEW THE PUZZLE</h1>
+            </div>
 
-                <PathCell type="image" imageLabel="2-1" angle={0}/>
-                <PathCell type="image" imageLabel="2-2" angle={270}/>
-                <PathCell type="image" imageLabel="2-3" angle={0}/>
-                <PathCell type="image" imageLabel="2-4" angle={0}/>
-                <PathCell type="image" imageLabel="2-5" angle={91}/>
-                <PathCell type="image" imageLabel="2-6" angle={0}/>
-                <PathCell type="image" imageLabel="2-7" angle={91}/>
+            <div className="opacity-0 w-[100px] md:opacity-100 md:w-[840px] grid grid-cols-7 grid-rows-4 m-10">
+                
 
-                <PathCell type="image" imageLabel="3-1" angle={0}/>
-                <PathCell type="image" imageLabel="3-2" angle={0}/>
-                <PathCell type="image" imageLabel="3-3" angle={0}/>
-                <PathCell type="image" imageLabel="3-4" angle={0}/>
-                <PathCell type="image" imageLabel="3-5" angle={0}/>
-                <PathCell type="image" imageLabel="3-6" angle={0}/>
-                <PathCell type="image" imageLabel="3-7" angle={0}/>
-
-                <PathCell type="image" imageLabel="4-1" angle={0}/>
-                <PathCell type="image" imageLabel="4-2" angle={0}/>
-                <PathCell type="image" imageLabel="4-3" angle={0}/>
-                <PathCell type="image" imageLabel="4-4" angle={0}/>
-                <PathCell type="image" imageLabel="4-5" angle={0}/>
-                <PathCell type="image" imageLabel="4-6" angle={0}/>
-                <PathCell type="image" imageLabel="4-7" angle={0}/>
+                {pathCells}
                 
 
             </div>
