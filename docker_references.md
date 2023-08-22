@@ -27,7 +27,7 @@ Example:
 Example:
 #### `docker run -p 3000:3000 shivang-vora-portfolio:1.0.1`
 
------------- These were the steps required for a basic docker based implemetation of creating a dockerfile, building an image and run a container -------------
+------------ These were the steps required for a basic docker based implemetation to create a dockerfile, build an image and run a container -------------
 
 ### Pushing an image to Docker Hub
 
@@ -53,9 +53,9 @@ Example:
 Example:
 #### `docker pull uchihaitachi12/shivang-vora-portfolio:1.0.0`
 
-#### 2. Runs the docker container and map any local port to the port you exposed in your docker file
+#### 2. Run the docker container and map any local port to the port you exposed in your docker file
 Example:
 #### `docker run  -p 3000:3000 -d uchihaitachi12/shivang-vora-portfolio:1.0.0`
 Here, in `-p 3000:3000` the first port number indicates a port of your local system and \
-the second port indicates the port of the docker container that you want to connect to.
+the second port indicates the port of the docker container that you want to connect to. \
 We want to connect to the port of the container that is exposed (written in the docker file) and expecting a connection.
