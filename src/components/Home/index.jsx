@@ -7,7 +7,7 @@ export default function Home(props) {
     const variant = useSelector((state)=>{return state.cursorVariant.value})
     const dispatch = useDispatch()
     return(
-        <div key={'container'} ref={props.ref} className={` flex justify-between flex-col h-screen w-100 ease-in duration-300 
+        <div key={'container'} className={` flex justify-between flex-col h-screen w-100 ease-in duration-300 
         ${
             mode 
             ? `bg-home-image-dark`

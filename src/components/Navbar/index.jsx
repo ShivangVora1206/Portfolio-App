@@ -21,7 +21,7 @@ export default function Navbar(props) {
 				<div key={"navbar-menu"} className='flex flex-row items-center font-minecraft text-xs md:text-[13px] text-gray-200 dark:text-gray-200 '>
 					<p key={"navbar-title-home"} onClick={()=>{props.onHomeClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>HOME</p>
 					<p key={"navbar-title-work"} onClick={()=>{props.onWorkClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>WORK</p>
-					<p key={"navbar-title-resume"} onClick={()=>{props.onResumeClick()}} className='me-0 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>RESUME</p>
+					<p key={"navbar-title-resume"} onClick={()=>{props.onResumeClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>RESUME</p>
 					<p key={"navbar-title-projects"} onClick={()=>{props.onProjectsClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>PROJECTS</p>
 					<p key={"navbar-title-stack"} onClick={()=>{props.onStackClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>STACK</p>
 					<p key={"navbar-title-puzzle"} onClick={()=>{props.onPuzzleClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>PUZZLE</p>

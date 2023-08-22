@@ -1,10 +1,14 @@
 import { projects, colorCodes, techStackList } from "../../constants";
 import { useState } from "react";
+import {useSelector, useDispatch} from 'react-redux';
+import { toggleLoader } from "../../global_store/slices/loaderSlice";
 export default function Stack(params) {
 
     const [clicked, setClicked] = useState(false);
     const [projectList, setProjectList] = useState([]);
     const [selectedTech, setSelectedTech] = useState();
+    const loader = useSelector((state)=>{return state.loader.value});
+    const dispatch = useDispatch();
 
 
     const getProjectsFromTech = (tech)=>{
@@ -14,6 +18,7 @@ export default function Stack(params) {
                 tempList.push(element.name);
             }
             setProjectList(tempList);
+        
         });
     }
 
