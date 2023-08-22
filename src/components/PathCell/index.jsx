@@ -1,10 +1,15 @@
+
 import { useState } from "react";
 export default function PathCell(props) {
 	const [degree, setDegree] = useState(props.angle);
 
 	const toggleDegree = (currentDegree) => {
-		console.log(currentDegree);
-		setDegree((currentDegree + 90) % 360);
+		if(currentDegree === 91){
+			setDegree(0);
+		}
+		else {
+			setDegree((currentDegree + 90) % 360);
+		}
 	};
 
 	const degreeToRotateMap = {
