@@ -3,8 +3,8 @@
 Here are some common docker commands for quick reference
 
 ## REFERENCES
-
-### 1. Create a Dockerfile in the local project directory
+### Creating a docker image
+#### 1. Create a Dockerfile in the local project directory
 Example:
 
 FROM node:18-alpine
@@ -19,11 +19,11 @@ CMD ["serve", "-s", "build", "-l", "3000"]
 
 EXPOSE 3000
 
-### 2. Create a docker image
+#### 2. Create a docker image
 Example:
 #### `docker image build -t shivang-vora-portfolio:1.0.1 .`
 
-### 3. Run a docker image as a container
+#### 3. Run a docker image as a container
 Example:
 #### `docker run -p 3000:3000 shivang-vora-portfolio:1.0.1`
 
