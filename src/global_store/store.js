@@ -5,6 +5,7 @@ import mousePointerReducer from "./slices/mousePointerSlice"
 import cursorVariantReducer from "./slices/cursorVariantSlice"
 import scrollPositionReducer from "./slices/scrollPositionSlice"
 import loaderReducer from "./slices/loaderSlice"
+import projectModalReducer from "./slices/projectModalSlice"
 export default configureStore({
     reducer:{
         counter:counterReducer,
@@ -12,7 +13,8 @@ export default configureStore({
         mousePointerCoord:mousePointerReducer,
         cursorVariant:cursorVariantReducer,
         scrollPosition:scrollPositionReducer,
-        loader:loaderReducer
+        loader:loaderReducer,
+        projectModal:projectModalReducer,
     }
 })
 

@@ -128,84 +128,84 @@ export const projects = [
 	{
 		name:"Portfolio Website",
 		description:"project description",
-		stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git'],
+		stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git', 'github', 'docker'],
 		image:"portfolio.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://github.com/ShivangVora1206/Portfolio-App"
 	},
 	{
 		name:"Blockchain Supply Chain Project",
-		description:"project description",
-		stack:['python', 'flask', 'android', 'androidstudio', 'mongodb', 'git'],
+		description:"Objective was to track the supply chain of military goods and equipment on an open ledger system. Blockchain fundamentals implemented using Python and FastAPI. Frontend built using MERN stack with Android application developed using Java and Retrofit",
+		stack:['python', 'flask', 'android', 'androidstudio', 'mongodb', 'git', 'github'],
 		image:"military_blockchain.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://github.com/ShivangVora1206/DrugTracker"
 	},
 	{
 		name:"GA Pilot App",
-		description:"project description",
-		stack:['java', 'android', 'androidstudio', 'git'],
+		description:"GA - Pilot from General Aeronautics is an app which is planned for Drone Pilots.  Merged API calls using RxJava observables for optimized performance for Mobile development. Added push notifications feature using OneSignal and Firebase Cloud Messaging. Implemented crucial bug fixes to enhance the app's stability and user experience",
+		stack:['java', 'android', 'androidstudio', 'git', 'github'],
 		image:"gapilot.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://play.google.com/store/apps/details?id=com.ga.ga_app"
 	},
 	{
 		name:"GA Technician App",
-		description:"project description",
-		stack:['java', 'android', 'androidstudio', 'git'],
+		description:" The technician app is designed to support the technicians with the repairs and maintenance of the drones.  Created the entire project from scratch as the primary developer. Implemented OTP-based login authentication for secure user access. Integrated APIs using Retrofit to fetch and display real-time data. Incorporated Recycler Views within tab layouts and utilized bottom sheet fragments for smooth navigation",
+		stack:['java', 'android', 'androidstudio', 'git', 'github'],
 		image:"gatechnician.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://play.google.com/store/apps/details?id=com.ga.gatechnician"
 	},
 	{
 		name:"Repartee Chat Application",
-		description:"project description",
-		stack:['react', 'node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git'],
+		description:"For users who prefer to conduct discussions in their private spaces, there is an application called Repartee.  With a dependable socket.io connection, users may send and receive messages one-to-one or in rooms containing multiple users. All of their crucial chats are securely kept on a MongoDB database at the backend with NodeJS APIs. New users can set up a profile with their preferred display image and begin communicating with the groups they belong to. Users can have a seamless experience without having to log in each time thanks to a persistent authorization mechanism.",
+		stack:['react', 'node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
 		image:"repartee.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://github.com/ShivangVora1206/Repartee-chat-app"
 	},
 	{
 		name:"Alder Alarm",
-		description:"project description",
-		stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git'],
+		description:"With the help of the app Alder Alarm, users may set alarms and reminders down to the minute. Users can use many devices at once to access the application, and they will all concurrently receive alarm alerts. Uses an indexed MongoDB database to provide lightning-fast query response times. Adler Alarm makes it easy for a user to keep track of all the alarms from the interactive user interface and users can also delete alarms as per necessity. ",
+		stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
 		image:"alder.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://github.com/ShivangVora1206/alarmApp"
 	},
 	{
 		name:"E - Commerce App",
-		description:"project description",
-		stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git'],
+		description:"An E-commerce web-application with Email user verification and MongoDB database. Users can create an account as a customer or an admin. Admin users have specialized privileges to add or delete a product from inventory. A regular customer can add or delete products from a cart and also manipulate the quantity of a product from their cart.",
+		stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
 		image:"ecommerce.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://github.com/ShivangVora1206/ECommerce-app"
 	},
 	{
 		name:"NoxLog",
-		description:"project description",
-		stack:['node', 'html', 'css', 'javascript', 'git'],
+		description:"A virtualized journaling application where users can add their regular diary entries. This application can substitute the need for maintaining a physical bedside diary for people who have a habit of journaling their days on a regular basis. The inner journal paging application is designed to have a darker theme to imitate the usual nighttime conditions of a person who writes their diary entries at the end of the day.",
+		stack:['node', 'html', 'css', 'javascript', 'git', 'github'],
 		image:"noxlog.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://github.com/ShivangVora1206/NoxLog"
 	},
 	{
 		name:"TODO App",
-		description:"project description",
-		stack:['node', 'html', 'css', 'javascript', 'mongodb', 'git'],
+		description:"Discover seamless task management with our HTML, CSS, and JS-powered Todo app. Leveraging a Node.js server and Mongoose, tasks are securely stored and retrieved from a MongoDB database. Experience organized productivity at your fingertips.",
+		stack:['node', 'html', 'css', 'javascript', 'mongodb', 'git', 'github'],
 		image:"todoapp.png",
-		github:"https://github.com/ShivangVora1206"
+		github:"https://github.com/ShivangVora1206/todo-app-nodejs"
 	},
 
 	{
 		name:"Pomodoro App",
-		description:"project description",
+		description:"An intuitive Pomodoro Clock application with an attractive user interface wherein the user can set a timer for work and break according to the concepts of a Pomodoro Clock. In order to encourage prolonged attention and prevent mental tiredness, this well-known time management technique requires one to alternate focused work spurts called pomodoros with frequent brief breaks",
 		stack:['javascript', 'html', 'css', 'git'],
 		image:"pomodoro.png",
 		github:"https://github.com/ShivangVora1206"
 	},
 	{
 		name:"Project ASA",
-		description:"project description",
+		description:"An attendance visualization solution for parents and students to view their attendance in detail using only their PRN. Uses Google Sheets API along with a FastAPI application to fetch, parse and provide the data. The dashboard is designed to be simple and easy to understand using color coded charts and numeric values to make it easy for a student or a parent to understand the data",
 		stack:['python', 'flask', 'html', 'css', 'javascript', 'git'],
 		image:"projectasa.png",
 		github:"https://github.com/ShivangVora1206"
 	},
 	{
 		name:"Affinity",
-		description:"project description",
+		description:"Objective was to understand the personality of a user to match them with people having similar personalities. Constructed Ocean personality profile of the users using KNN Machine Learning algorithm.",
 		stack:['python', 'java', 'html', 'css', 'mysql', 'git'],
 		image:"affinity.png",
 		github:"https://github.com/ShivangVora1206"
