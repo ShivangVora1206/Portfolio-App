@@ -125,7 +125,7 @@ function App() {
         <div ref={workRef}><Work/></div>
         <div ref={resumeRef}><Resume/></div>
         <div ref={projectsRef}><Projects/></div>
-        <div ref={stackRef}><Stack/></div>
+        <div ref={stackRef}><Stack onProjectsClick={scrollToProjects}/></div>
         <div ref={puzzleRef}><PathMatrix/></div>
         </div>
     </div></>

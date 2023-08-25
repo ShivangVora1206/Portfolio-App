@@ -2,7 +2,9 @@ import { projects, colorCodes, techStackList } from "../../constants";
 import { useState } from "react";
 import {useSelector, useDispatch} from 'react-redux';
 import { toggleLoader } from "../../global_store/slices/loaderSlice";
-export default function Stack(params) {
+import {toggleProjectModal,setProject} from "../../global_store/slices/projectModalSlice";
+import { getOneProjectFromNameHelper, getProjectsFromTechHelper } from "../../Utils/projectUtils";
+export default function Stack(props) {
 
     const [clicked, setClicked] = useState(false);
     const [projectList, setProjectList] = useState([]);
@@ -12,14 +14,7 @@ export default function Stack(params) {
 
 
     const getProjectsFromTech = (tech)=>{
-        let tempList = [];
-        projects.forEach(element => {
-            if(element.stack.includes(tech)){
-                tempList.push(element.name);
-            }
-            setProjectList(tempList);
-        
-        });
+        setProjectList(getProjectsFromTechHelper(tech));
     }
 
     return (
@@ -30,8 +25,8 @@ export default function Stack(params) {
                 <h1 onClick={()=>{setClicked(false);setProjectList([]);setSelectedTech("");}}  className="font-minecraft me-1 cursor-pointer">X</h1></div>
                 <div className="overflow-y-scroll h-full scrollbar mt-2">
                 {projectList.map((item, index)=>{
-                    return(<div key={item} className={`h-20 w-full ${colorCodes[index%7]} bg-opacity-30 hover:bg-opacity-100 ms-0 my-1`}>
-                                <h1 className="flex h-full justify-center items-center font-minecraft text-slate-200 text-xl duration-200 hover:text-2xl">{item.toUpperCase()}</h1>
+                    return(<div key={item.name} className={`h-20 w-full ${colorCodes[index%7]} bg-opacity-30 hover:bg-opacity-100 ms-0 my-1`} onClick={()=>{dispatch(setProject(item));dispatch(toggleProjectModal(true));props.onProjectsClick()}}>
+                                <h1 className="flex h-full justify-center items-center font-minecraft text-slate-200 text-xl duration-200 hover:text-2xl">{item.name.toUpperCase()}</h1>
                             </div>)
                 })}
                     
