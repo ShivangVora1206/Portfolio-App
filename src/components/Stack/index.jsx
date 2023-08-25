@@ -1,9 +1,9 @@
-import { projects, colorCodes, techStackList } from "../../constants";
+import { colorCodes } from "../../config";
+import { techStackList } from "../../config";
 import { useState } from "react";
 import {useSelector, useDispatch} from 'react-redux';
-import { toggleLoader } from "../../global_store/slices/loaderSlice";
 import {toggleProjectModal,setProject} from "../../global_store/slices/projectModalSlice";
-import { getOneProjectFromNameHelper, getProjectsFromTechHelper } from "../../Utils/projectUtils";
+import { getProjectsFromTechHelper } from "../../Utils/projectUtils";
 export default function Stack(props) {
 
     const [clicked, setClicked] = useState(false);

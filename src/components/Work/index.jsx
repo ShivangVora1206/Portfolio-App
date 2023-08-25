@@ -1,7 +1,7 @@
 import { toggleMode } from "../../global_store/slices/navbarSlice"
 import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector"
 import WorkListItem from "../WorkListItem";
-import { companyDetails } from "../../constants";
+import { companyDetails } from "../../config";
 export default function Work() {
     
     const mode = useSelector((state)=>{return state.navbar.value.mode})

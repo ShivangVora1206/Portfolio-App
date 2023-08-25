@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import { useCollapse } from "react-collapsed";
 import { useAnimation } from "framer-motion";
-import { iconsPathMap } from "../../constants";
+import { iconsPathMap } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	toggleProjectModal,

@@ -1,9 +1,9 @@
 import { mdiGithub } from '@mdi/js'
-import { projects } from "../../constants";
+import { projects } from "../../config";
 import ProjectListItem from "../ProjectListItem";
 import { UseSelector, useDispatch, useSelector } from "react-redux";
 import { toggleProjectModal, setProject } from "../../global_store/slices/projectModalSlice";
-import { iconsPathMap } from '../../constants'
+import { iconsPathMap } from '../../config'
 import Icon from "@mdi/react";
 export default function Projects(props) {
 	// console.log(projects);

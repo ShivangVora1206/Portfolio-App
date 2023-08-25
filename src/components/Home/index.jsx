@@ -1,4 +1,4 @@
-import {firstName, lastName, aboutText, socialConstants, backgroundDark, backgroundLight} from "../../constants"
+import {firstName, lastName, aboutText, socialConstants} from "../../config"
 import { useSelector, useDispatch } from "react-redux";
 import { updateCursorVariant } from "../../global_store/slices/cursorVariantSlice";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
