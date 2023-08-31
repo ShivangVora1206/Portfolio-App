@@ -1,9 +1,10 @@
-
+import React from "react";
 import { useState } from "react";
-export default function PathCell(props) {
+import { PathCellProps } from "../../config";
+export default function PathCell(props:PathCellProps) {
 	const [degree, setDegree] = useState(props.angle);
 
-	const toggleDegree = (currentDegree) => {
+	const toggleDegree = (currentDegree:number) => {
 		if(currentDegree === 91){
 			setDegree(0);
 		}
@@ -12,7 +13,7 @@ export default function PathCell(props) {
 		}
 	};
 
-	const degreeToRotateMap = {
+	const degreeToRotateMap:any = {
 		0: "rotate-0",
 		90: "rotate-90",
 		180: "rotate-180",
@@ -20,7 +21,7 @@ export default function PathCell(props) {
         91: "-rotate-90"
 	};
 
-	const imageToBgMap = {
+	const imageToBgMap:any = {
 		"1-1": "bg-path-cell-1-1",
 		"1-2": "bg-path-cell-1-2",
 		"1-3": "bg-path-cell-1-3",

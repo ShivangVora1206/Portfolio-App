@@ -1,16 +1,16 @@
 import Icon from "@mdi/react";
-
+import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import { useCollapse } from "react-collapsed";
 import { useAnimation } from "framer-motion";
-import { iconsPathMap } from "../../config";
+import { iconsPathMap, Project } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	toggleProjectModal,
 	setProject,
 } from "../../global_store/slices/projectModalSlice";
-export default function ProjectListItem(params) {
+export default function ProjectListItem(params:{project:Project}) {
 	// console.log(params.project.stack);
 	const dispatch = useDispatch();
 
@@ -32,7 +32,7 @@ export default function ProjectListItem(params) {
 		>
 			<img
 				className="rounded-lg h-52"
-				src={process.env.PUBLIC_URL + params.project.image}
+				src={window.location.origin + "/" + params.project.image}
 			/>
 			<div className="absolute  bg-zinc-300 dark:bg-zinc-800 w-80 h-100 mt-0 rounded-lg opacity-0 p-0 hover:p-3 hover:opacity-100  duration-200">
 				<h1 className="font-SF_Pro_Display_Black text-center mt-2">
@@ -46,7 +46,7 @@ export default function ProjectListItem(params) {
 									{typeof iconsPathMap[item] == typeof "" ? (
 										<Icon
 											className="m-1"
-											path={iconsPathMap[item]}
+											path={iconsPathMap[item].toString()}
 											size={1}
 										/>
 									) : (

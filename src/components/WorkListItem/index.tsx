@@ -1,14 +1,16 @@
+import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import {useCollapse} from 'react-collapsed';
 import {MdUnfoldMore, MdUnfoldLess} from 'react-icons/md';
+import { WorkItem } from "../../config";
 const itemVariant = {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
     hidden: { opacity: 0.1, scale: 0}
 };
 
-export default function WorkListItem(params) {
+export default function WorkListItem(params:WorkItem) {
 
     const [ isExpanded, setExpanded ] = useState(false);
     const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });

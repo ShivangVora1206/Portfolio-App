@@ -1,4 +1,5 @@
-export default function Pattern(params) {
+import React from "react";
+export default function Pattern(params:any) {
 	return (
 		<div className="rotate-180 w-full h-[180px] blur-sm">
 			<svg

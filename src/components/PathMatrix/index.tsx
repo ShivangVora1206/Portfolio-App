@@ -1,10 +1,11 @@
-import { useSelector } from "react-redux"
+// import { useSelector } from "react-redux"
+import React from "react";
 import PathCell from "../PathCell"
 import Pattern from "../Pattern"
 
-export default function PathMatrix(props) {
+export default function PathMatrix(props:any) {
 
-    let pathCells = [];
+    let pathCells:React.JSX.Element[] = [];
     let angles = [0, 90, 180, 270, 91];
     let difficulty = 2;
 
@@ -29,7 +30,7 @@ export default function PathMatrix(props) {
             
             <h2 id="subtitle" className="text-slate-200 text-2xl font-minecraft"> Can you solve the below puzzle to reveal the hidden image ? </h2>
 
-            <div id="screen-size-alert-banner" className="absolute flex items-center rounded-xl border top-96 bg-zinc-700  h-[300px] w-[350px] sm:h-[300px] sm:w-[400px] md:opacity-0 md:w-0 md:h-0">
+            <div id="screen-size-alert-banner" className="absolute flex items-center rounded-xl border top-[400px] bg-zinc-700  h-[300px] w-[350px] sm:h-[300px] sm:w-[400px] md:opacity-0 md:w-0 md:h-0">
                 <h1 className="text-center m-5 text-slate-200 font-minecraft text-2xl">PLEASE USE A LARGER SCREEN TO VIEW THE PUZZLE</h1>
             </div>
 

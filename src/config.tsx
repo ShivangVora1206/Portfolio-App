@@ -18,8 +18,16 @@ import {BiLogoMongodb, BiLogoDjango, BiLogoDocker, BiLogoFlutter, BiLogoGmail, B
 import {TbBrandRedux, TbBrandVscode} from 'react-icons/tb';
 import {SiMysql, SiPostgresql, SiTypescript, SiNextdotjs, SiDart, SiLinkedin, SiAndroid, SiAndroidstudio, SiSocketdotio} from 'react-icons/si';
 import {GrInstagram} from 'react-icons/gr';
+import { JSXElementConstructor } from 'react';
+import { IconType } from "react-icons/lib";
 
-
+export type WorkItem = {
+	companyName: string,
+	startDate: string,
+	endDate: string,
+	content: string[],
+	mode: boolean
+}
 export type Project = {
     name: string,
     description: string,
@@ -41,6 +49,14 @@ export type NavbarProps = {
 	onStackClick: () => void,
 	onPuzzleClick: () => void,
 	
+}
+export type PathCellProps = {
+	type: string,
+	angle: number,
+	imageLabel:string
+}
+export interface IconsPathMapInterface {
+  [key: string]:  string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal; // Or replace 'string' with the appropriate type if using icon names instead of JSX elements
 }
 export const projects:Project[] = [
 	{
@@ -145,8 +161,6 @@ export const aboutText:string ="Allow me to introduce myself—I'm Shivang Vora,
 
 export const colorCodes:string[] = ['bg-red-600', 'bg-orange-600', 'bg-yellow-500', 'bg-green-600', 'bg-teal-600', 'bg-blue-600', 'bg-indigo-600'];
 
-
-
 export const companyDetails:Company[] = [
 	{
 		name: "General Aeronutics Pvt. Ltd. - Android Developer",
@@ -202,7 +216,7 @@ export const companyDetails:Company[] = [
 ];
 
 
-export const iconsPathMap = {
+export const iconsPathMap:IconsPathMapInterface = {
 	python: mdiLanguagePython,
 	react: mdiReact,
 	javascript: mdiLanguageJavascript,
@@ -238,20 +252,20 @@ export const iconsPathMap = {
 
 
 export const techStackList = [
-	{name:'python', bgtailwind:'dark:bg-red-500 bg-violet-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['python']} size={3}/>},
+	{name:'python', bgtailwind:'dark:bg-red-500 bg-violet-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['python'].toString()} size={3}/>},
 	{name:'vscode', bgtailwind:'dark:bg-red-600 bg-violet-700', icon:<TbBrandVscode size={55} className="m-1 p-3 sm:p-1"/>},
-	{name:'javascript', bgtailwind:'dark:bg-red-700 bg-violet-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['javascript']} size={3}/>},
+	{name:'javascript', bgtailwind:'dark:bg-red-700 bg-violet-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['javascript'].toString()} size={3}/>},
 	{name:'docker', bgtailwind:'dark:bg-red-800 bg-violet-500', icon:<BiLogoDocker size={55} className="m-1 p-3 sm:p-1"/>},
-	{name:'html', bgtailwind:'dark:bg-pink-500 bg-purple-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['html']} size={3}/>}, 
-	{name:'git', bgtailwind:'dark:bg-pink-600 bg-purple-700', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['git']} size={3}/>}, 
-	{name:'node', bgtailwind:'dark:bg-pink-700 bg-purple-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['node']} size={3}/>}, 
+	{name:'html', bgtailwind:'dark:bg-pink-500 bg-purple-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['html'].toString()} size={3}/>}, 
+	{name:'git', bgtailwind:'dark:bg-pink-600 bg-purple-700', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['git'].toString()} size={3}/>}, 
+	{name:'node', bgtailwind:'dark:bg-pink-700 bg-purple-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['node'].toString()} size={3}/>}, 
 	{name:'mongodb', bgtailwind:'dark:bg-pink-800 bg-purple-500', icon:<BiLogoMongodb size={55} className="m-1 p-3 sm:p-1"/>},
-	{name:'css', bgtailwind:'dark:bg-purple-500 bg-pink-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['css']} size={3}/>}, 
+	{name:'css', bgtailwind:'dark:bg-purple-500 bg-pink-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['css'].toString()} size={3}/>}, 
 	{name:'react', bgtailwind:'dark:bg-purple-600 bg-pink-700', icon:<BiLogoReact size={55} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'mysql', bgtailwind:'dark:bg-purple-700 bg-pink-600', icon:<SiMysql size={55} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'android', bgtailwind:'dark:bg-purple-800 bg-pink-500', icon:<SiAndroid size={50} className="m-1 p-3 sm:p-1"/>},
 	{name:'androidstudio', bgtailwind:'dark:bg-violet-500 bg-red-800', icon:<SiAndroidstudio size={55} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'redux', bgtailwind:'dark:bg-violet-600 bg-red-700', icon:<TbBrandRedux size={52} className="m-1 p-3 sm:p-1"/>}, 
-	{name:'java', bgtailwind:'dark:bg-violet-700 bg-red-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['java']} size={3}/>}, 
+	{name:'java', bgtailwind:'dark:bg-violet-700 bg-red-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['java'].toString()} size={3}/>}, 
 	{name:'tailwind', bgtailwind:'dark:bg-violet-800 bg-red-500', icon:<BiLogoTailwindCss size={55} className="m-1 p-3 sm:p-1"/>}
 ]
