@@ -1,22 +1,21 @@
-import { UseSelector, useDispatch, useSelector } from 'react-redux'
-import { toggleMode, toggleScrolled } from '../../global_store/slices/navbarSlice';
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleMode } from '../../global_store/slices/navbarSlice';
 import { MdWbSunny } from 'react-icons/md';
 import {FaMoon} from 'react-icons/fa';
+import { NavbarProps } from '../../config';
+import React from 'react';
 
-export default function Navbar(props) {
-	const mode = useSelector((state) => {return state.navbar.value.mode});
-	const visibility = useSelector((state) => {return state.navbar.value.visibility});
+
+
+export default function Navbar(props: NavbarProps) {
+	const mode = useSelector((state:any) => {return state.navbar.value.mode});
+	const visibility = useSelector((state:any) => {return state.navbar.value.visibility});
     const dispatch = useDispatch()
-	function scrollTo(position){
-		window.scrollTo({
-			top: position,
-			behavior: "smooth",
-		});
-	};
+	
 	return (
 		<div key={"container"} className="fixed z-10 top-0 w-full">
 			<div key={"navbar"} className= {`${visibility ? ' backdrop-blur-sm bg-white bg-opacity-20 dark:bg-black dark:bg-opacity-20 border-b border-b-slate-500 border-opacity-50 dark:border-opacity-50 dark:border-b-slate-400' : 'bg-transparent'} text-white flex flex-row items-center justify-between p-2 ease-in-out transition delay-100`}>
-				<img src={process.env.PUBLIC_URL + 'svlogowhite-no-bg.png'} key={"navbar-logo"}  className=' w-100  h-6 mx-2 md:w-100 md:h-10 md:mx-3 text-gray-700 dark:text-white pointer-events-none'/>
+				<img src={window.location.origin + '/svlogowhite-no-bg.png'} key={"navbar-logo"}  className=' w-100  h-6 mx-2 md:w-100 md:h-10 md:mx-3 text-gray-700 dark:text-white pointer-events-none'/>
 					
 				<div key={"navbar-menu"} className='flex flex-row items-center font-minecraft text-xs md:text-[13px] text-gray-200 dark:text-gray-200 '>
 					<p key={"navbar-title-home"} onClick={()=>{props.onHomeClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>HOME</p>

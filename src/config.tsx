@@ -27,6 +27,21 @@ export type Project = {
     github: string,
     image: string
 }
+export type Company = {
+    name: string,
+    content: string[],
+    startDate: string,
+    endDate: string
+}
+export type NavbarProps = {
+	onHomeClick: () => void,
+	onWorkClick: () => void,
+	onResumeClick: () => void,
+	onProjectsClick: () => void,
+	onStackClick: () => void,
+	onPuzzleClick: () => void,
+	
+}
 export const projects:Project[] = [
 	{
 		name:"Portfolio Website",
@@ -130,12 +145,7 @@ export const aboutText:string ="Allow me to introduce myself—I'm Shivang Vora,
 
 export const colorCodes:string[] = ['bg-red-600', 'bg-orange-600', 'bg-yellow-500', 'bg-green-600', 'bg-teal-600', 'bg-blue-600', 'bg-indigo-600'];
 
-type Company = {
-    name: string,
-    content: string[],
-    startDate: string,
-    endDate: string
-}
+
 
 export const companyDetails:Company[] = [
 	{
