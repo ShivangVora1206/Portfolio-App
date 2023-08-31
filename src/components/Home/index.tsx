@@ -2,9 +2,10 @@ import {firstName, lastName, aboutText, socialConstants} from "../../config"
 import { useSelector, useDispatch } from "react-redux";
 import { updateCursorVariant } from "../../global_store/slices/cursorVariantSlice";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
-export default function Home(props) {
-    const mode = useSelector((state) => {return state.navbar.value.mode})
-    const variant = useSelector((state)=>{return state.cursorVariant.value})
+import React from "react";
+export default function Home() {
+    const mode = useSelector((state:any) => {return state.navbar.value.mode})
+    const variant = useSelector((state:any)=>{return state.cursorVariant.value})
     const dispatch = useDispatch()
     return(
         <div key={'container'} className={` flex justify-between flex-col h-screen w-100 ease-in duration-300 

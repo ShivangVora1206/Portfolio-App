@@ -18,6 +18,6 @@ export const navbarSlice = createSlice({
     }
 })
 
-export const {toggleMode, toggleScrolled, toggleVisibility} = navbarSlice.actions
+export const {toggleMode, toggleVisibility} = navbarSlice.actions
 
 export default navbarSlice.reducer;
