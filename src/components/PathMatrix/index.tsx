@@ -1,23 +1,50 @@
-// import { useSelector } from "react-redux"
+import axios from "axios";
 import React from "react";
 import PathCell from "../PathCell"
 import Pattern from "../Pattern"
+import { useEffect, useState } from "react";
 
 export default function PathMatrix(props:any) {
-
-    let pathCells:React.JSX.Element[] = [];
+    const [pathCells, setPathCells] = useState<any>({list:[]});
     let angles = [0, 90, 180, 270, 91];
     let difficulty = 2;
 
+    useEffect(() => {
+        getPathCells();
+    }, [])
+
+    useEffect(() => {
+        console.log("PathCells updated -> ", pathCells);
+    }, [pathCells])
+
+
+    function getPathCells(){
+        console.log("getPathCells");
+        
+        let tempPathCells:any[] = [];
         for (let i = 1; i < 5; i++) {
             for (let j = 1; j < 8; j++) {
                 let angle = 0;
                 if((i+j)%difficulty === 0){
                     angle = angles[Math.floor(Math.random() * angles.length)];
                 }
-                pathCells.push(<PathCell type="image" imageLabel={`${i}-${j}`} angle={angle}/>)
+                tempPathCells.push(<PathCell type="image" imageLabel={`${i}_${j}`} angle={angle}/>)
+                
             }
             
+        }
+        setPathCells({list:[...tempPathCells]});
+        console.log("TempPathCells -> ", tempPathCells);
+    }
+
+        async function getImagesApi(){
+            // let data = {"id" : "1_1.jpg"}
+            // let response = await axios.get("http://localhost:3001/Images/v1/getImage", {params: data});
+            let response = await axios.get("http://localhost:3001/Images/v1/getImages");
+            console.log(response);
+            if(response.status === 200){
+                getPathCells();
+            }
         }
 
     return(
@@ -37,36 +64,18 @@ export default function PathMatrix(props:any) {
             <div className="opacity-0 w-[100px] md:opacity-100 md:w-[840px] grid grid-cols-7 grid-rows-4 m-10">
                 
 
-                {pathCells}
+                {pathCells.list}
                 
 
             </div>
 
-            <div ></div>
+
+            <div>
+            <button className="bg-white h-5 w-8" key={"btn_api_call"} onClick={()=>{getImagesApi()}}> Call </button>
+            
+            </div>
 
         </div>
     )
 }
 
-/* <div id="vertical-line-full" className="h-[120px] w-[120px] bg-white mx-10">
-                <div className="h-[120px] w-[40px] bg-black ms-[40px]"></div>
-            </div>
-            <div id="horizontal-line-full" className="h-[120px] w-[120px] bg-white mx-10">
-                <div className="h-[40px] w-[120px] bg-black mt-[40px]"></div>
-            </div>
-            <div id="corner-left-top" className="h-[120px] w-[120px] bg-white mx-10">
-                <div className="h-[40px] w-[40px] bg-black ms-[40px]"></div>
-                <div className="h-[40px] w-[80px] bg-black"></div>
-            </div>
-            <div id="corner-right-top" className="h-[120px] w-[120px] bg-white mx-10">
-                <div className="h-[40px] w-[40px] bg-black ms-[40px]"></div>
-                <div className="h-[40px] w-[80px] bg-black ms-[40px]"></div>
-            </div>
-            <div id="corner-right-bottom" className="h-[120px] w-[120px] bg-white mx-10">
-                <div className="h-[40px] w-[80px] bg-black mt-[40px] ms-[40px]"></div>
-                <div className="h-[40px] w-[40px] bg-black ms-[40px]"></div>
-            </div>
-            <div id="corner-left-bottom" className="h-[120px] w-[120px] bg-white mx-10">
-                <div className="h-[40px] w-[80px] bg-black mt-[40px]"></div>
-                <div className="h-[40px] w-[40px] bg-black ms-[40px]"></div>
-            </div> */

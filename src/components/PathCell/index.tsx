@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { PathCellProps } from "../../config";
+import { PathCellProps, IMAGES_BASE_URL } from "../../config";
 export default function PathCell(props:PathCellProps) {
 	const [degree, setDegree] = useState(props.angle);
 
@@ -147,16 +147,27 @@ export default function PathCell(props:PathCellProps) {
 			break;
 		case "image":
 			cell = (
-				<div
+				<img
+					src={`${IMAGES_BASE_URL}?id=`+props.imageLabel+'.jpg'}
 					id="image"
 					onClick={() => {
 						toggleDegree(degree);
 					}}
-					className={`h-[120px] w-[120px] hover:scale-90 duration-200 bg-cover bg-no-repeat ${
-						imageToBgMap[props.imageLabel]
-					} ${degreeToRotateMap[degree]}`}
+					className={`h-[120px] w-[120px] hover:scale-90 duration-200 ${degreeToRotateMap[degree]}`}
 				/>
 			);
+		// case "image":
+		// 	cell = (
+		// 		<div
+		// 			id="image"
+		// 			onClick={() => {
+		// 				toggleDegree(degree);
+		// 			}}
+		// 			className={`h-[120px] w-[120px] hover:scale-90 duration-200 bg-cover bg-no-repeat ${
+		// 				imageToBgMap[props.imageLabel]
+		// 			} ${degreeToRotateMap[degree]}`}
+		// 		/>
+		// 	);
 	}
 
 	return cell;

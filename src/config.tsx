@@ -269,3 +269,5 @@ export const techStackList = [
 	{name:'java', bgtailwind:'dark:bg-violet-700 bg-red-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['java'].toString()} size={3}/>}, 
 	{name:'tailwind', bgtailwind:'dark:bg-violet-800 bg-red-500', icon:<BiLogoTailwindCss size={55} className="m-1 p-3 sm:p-1"/>}
 ]
+
+export const IMAGES_BASE_URL:string = "http://localhost:3001/Images/v1/getImage";
