@@ -14,12 +14,12 @@ export default function Projects(props:any) {
 	return (
 		<div key="container" className="relative">
 		{	projectModal ? <div className="absolute z-[9] w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-70">
-			<div className="relative bg-white dark:bg-gray-950 rounded-xl flex flex-col lg:flex-row justify-center lg:justify-between items-center h-[460px] sm:h-[950px] md:w-[650px] lg:h-[500px] lg:w-[1000px]">
-			<span className="absolute font-minecraft cursor-pointer text-gray-900 dark:text-slate-200 right-3 top-2"  onClick={()=>{dispatch(toggleProjectModal(false))}}>X</span>
-				<div key={'project-images-section'} className="flex flex-col justify-center mx-5 lg:ms-[25px] lg:me-2 w-[300px] h-[200px] sm:w-[600px] sm:h-[440px] rounded-xl bg-cyan-900 dark:bg-indigo-950">
+			<div className="relative bg-white dark:bg-violet-950 rounded-xl flex flex-col lg:flex-row justify-center lg:justify-between items-center h-[460px] sm:h-[950px] md:w-[650px] lg:h-[500px] lg:w-[1000px]">
+			<span className="absolute font-minecraft cursor-pointer text-violet-900 dark:text-violet-200 right-3 top-2 text-lg"  onClick={()=>{dispatch(toggleProjectModal(false))}}>X</span>
+				<div key={'project-images-section'} className="flex flex-col justify-center mx-5 lg:ms-[25px] lg:me-2 w-[300px] h-[200px] sm:w-[600px] sm:h-[440px] rounded-xl bg-violet-300 dark:bg-indigo-950 drop-shadow-[0_10px_10px_rgba(0,0,0,0.40)]">
 					<img src={window.location.origin + "/" + currentProject.image}></img>
 				</div>
-				<div key={'project-details-section'} className="lg:me-[25px] lg:ms-2 w-[300px] h-[200px] lg:w-[380px] sm:w-[600px] sm:h-[440px] rounded-xl bg-cyan-500 dark:bg-indigo-900 text-gray-900 dark:text-slate-200 flex flex-col items-center">
+				<div key={'project-details-section'} className="lg:me-[25px] lg:ms-2 w-[300px] h-[200px] lg:w-[380px] sm:w-[600px] sm:h-[440px] rounded-xl bg-violet-400 dark:bg-violet-900 text-violet-950 dark:text-violet-200 drop-shadow-[0_10px_10px_rgba(0,0,0,0.40)] flex flex-col items-center">
 					<h1 key={'project-title'} className="text-center font-minecraft mt-[8px] text-xl">{currentProject.name}</h1>
 					<div key={'stack-grid'} className="w-[200px] h-[40px] grid grid-cols-5 m-2">
 
