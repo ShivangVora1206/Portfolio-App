@@ -18,6 +18,7 @@ export default function ImageUploadModal(props:any) {
                 console.log(response.data);
                 dispatch(toggleLoader(false))
                 dispatch(toggleImageModal(false))
+                props.onUploadCallback();
             }else {
                 console.log("Image upload failed");
                 dispatch(toggleLoader(false))
@@ -39,6 +40,7 @@ export default function ImageUploadModal(props:any) {
         const file = event.target.files[0];
         setSelectedImage(file);
     }
+    //TODO:Make This Responsive
 
     return (
         <div key={"container-image-modal"} className=" bg-black bg-opacity-40 h-full w-full flex flex-col justify-center items-center">

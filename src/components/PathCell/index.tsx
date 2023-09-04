@@ -141,7 +141,7 @@ export default function PathCell(props:PathCellProps) {
 			cell = (
 				<div
 					id="blank"
-					className={`h-[120px] w-[120px]  bg-white dark:bg-black  hover:scale-90 duration-200`}
+					className={`h-[0px] w-[0px] `}
 				/>
 			);
 			break;
