@@ -271,3 +271,10 @@ export const techStackList = [
 ]
 
 export const IMAGES_BASE_URL:string = "http://localhost:3001/Images/v1/getImage";
+export const UPLOAD_IMAGE_BASE_URL:string = "http://localhost:3001/Images/v1/uploadImage";
+export function getCurrentTimestampAsString(): string {
+	const currentTimestamp = new Date();
+	const formattedTimestamp = currentTimestamp.toISOString(); // ISO 8601 format
+
+	return formattedTimestamp;
+}

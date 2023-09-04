@@ -6,6 +6,7 @@ import cursorVariantReducer from "./slices/cursorVariantSlice"
 import scrollPositionReducer from "./slices/scrollPositionSlice"
 import loaderReducer from "./slices/loaderSlice"
 import projectModalReducer from "./slices/projectModalSlice"
+import imageModalSlice from "./slices/imageModalSlice"
 export default configureStore({
     reducer:{
         counter:counterReducer,
@@ -15,6 +16,7 @@ export default configureStore({
         scrollPosition:scrollPositionReducer,
         loader:loaderReducer,
         projectModal:projectModalReducer,
+        imageModal:imageModalSlice
     }
 })
 

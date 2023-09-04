@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { PathCellProps, IMAGES_BASE_URL } from "../../config";
+import { PathCellProps, IMAGES_BASE_URL, getCurrentTimestampAsString } from "../../config";
 export default function PathCell(props:PathCellProps) {
 	const [degree, setDegree] = useState(props.angle);
 
@@ -148,7 +148,7 @@ export default function PathCell(props:PathCellProps) {
 		case "image":
 			cell = (
 				<img
-					src={`${IMAGES_BASE_URL}?id=`+props.imageLabel+'.jpg'}
+					src={`${IMAGES_BASE_URL}?id=`+props.imageLabel+'.jpg'+ getCurrentTimestampAsString()}
 					id="image"
 					onClick={() => {
 						toggleDegree(degree);
