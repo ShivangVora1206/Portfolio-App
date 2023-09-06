@@ -55,6 +55,13 @@ export type PathCellProps = {
 	angle: number,
 	imageLabel:string
 }
+export type customToastProps = {
+	visible : boolean,
+    timeout : number,
+    message : string,
+    type : string
+}
+
 export interface IconsPathMapInterface {
   [key: string]:  string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal; // Or replace 'string' with the appropriate type if using icon names instead of JSX elements
 }
