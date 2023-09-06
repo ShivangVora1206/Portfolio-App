@@ -15,7 +15,7 @@ import Stack from './components/Stack';
 import Resume from './components/Resume';
 import PathMatrix from './components/PathMatrix';
 import Spinner from './components/Spinner';
-import ImageUploadModal from './components/ImageUploadModal';
+import CustomToast from './components/CustomToast';
 function App() {
 
   const mode = useSelector((state) => {return state.navbar.value.mode})
@@ -111,6 +111,7 @@ function App() {
 
   return (
     <>
+    
     {loader ? <div key="loader" className={`z-10 bg-black bg-opacity-40 h-full w-full fixed flex flex-col justify-center items-center `}>
       <Spinner/>
     </div> : <></>}
@@ -133,6 +134,7 @@ function App() {
         <div ref={projectsRef}><Projects/></div>
         <div ref={stackRef}><Stack onProjectsClick={scrollToProjects}/></div>
         <div ref={puzzleRef}><PathMatrix/></div>
+        <div className='fixed z-[100] bottom-1 w-full'><CustomToast/></div>
         </div>
     </div></>
   );
