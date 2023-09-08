@@ -36,7 +36,7 @@ export default function CustomToast(props: any) {
 	return (
 		<div
 			key={"container"}
-			className="relative h-[90px] cursor-default flex flex-row justify-end me-2"
+			className={`relative ${toast.visible ? 'h-[90px]' : 'h-0'} cursor-default flex flex-row justify-end me-2`}
 		>
 			<div
 				onClick={handelToast}

@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { customToastProps } from "../../config";
 const initialState: customToastProps = {
-    visible: true,
-	message: "hello",
+    visible: false,
+	message: "",
 	timeout: 2000,
 	type: "success",
 };

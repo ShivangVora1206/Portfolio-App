@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleLoader } from "../../global_store/slices/loaderSlice";
 import {toggleImageModal} from "../../global_store/slices/imageModalSlice";
 import { UPLOAD_IMAGE_BASE_URL } from "../../config";
+import { showCustomToast } from "../../global_store/slices/customToastSlice";
 export default function ImageUploadModal(props:any) {
     const [selectedImage, setSelectedImage] = useState<any>(null);
     const dispatch = useDispatch();
@@ -18,6 +19,7 @@ export default function ImageUploadModal(props:any) {
                 console.log(response.data);
                 dispatch(toggleLoader(false))
                 dispatch(toggleImageModal(false))
+                dispatch(showCustomToast({message:"Image uploaded successfully", type:"success", timeout:2000}))
                 props.onUploadCallback();
             }else {
                 console.log("Image upload failed");
