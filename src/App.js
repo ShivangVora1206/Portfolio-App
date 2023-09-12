@@ -140,7 +140,8 @@ function App() {
       
       
       <div key={'container'} className={`flex flex-col`}>
-        <div ref={homeRef}><Home/></div>
+        <div ref={homeRef} className=''><Home/></div>
+        <div className='bg-black w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-xl'> Keep scrolling down to continue</div></div>
         <div ref={workRef}><Work/></div>
         <div ref={resumeRef}><Resume/></div>
         <div ref={projectsRef}><Projects/></div>
