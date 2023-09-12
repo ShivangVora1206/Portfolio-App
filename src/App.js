@@ -1,5 +1,6 @@
 
 import './App.css';
+// import io from 'socket.io-client';
 import { useSelector, useDispatch } from "react-redux";
 import { toggleMode, toggleVisibility } from './global_store/slices/navbarSlice';
 import { updatePointerCoords } from './global_store/slices/mousePointerSlice';
@@ -16,6 +17,13 @@ import Resume from './components/Resume';
 import PathMatrix from './components/PathMatrix';
 import Spinner from './components/Spinner';
 import CustomToast from './components/CustomToast';
+import { showCustomToast } from './global_store/slices/customToastSlice';
+
+// const socket = io.connect("http://localhost:8000");
+// socket.on("from-server", m => {console.log("from server",m);})
+
+// socket.emit("from-client", "From client");
+// console.log(socket);
 function App() {
 
   const mode = useSelector((state) => {return state.navbar.value.mode})
@@ -31,7 +39,11 @@ function App() {
   const resumeRef = useRef(null)
   const puzzleRef = useRef(null)
   // console.log(pointerCoords);
-  // console.log(homeRef);
+  // // console.log(homeRef);
+  // socket.on("new-connection-alert", m => {
+  //   console.log("new connection",m);
+  //   dispatch(showCustomToast({message:"New user has opened this portfolio!", type:"info"}))
+  // })
 
   const scrollToHome = () => {
     homeRef.current.scrollIntoView({behavior:'smooth'})
