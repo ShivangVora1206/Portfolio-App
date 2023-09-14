@@ -38,7 +38,6 @@ function App() {
   const stackRef = useRef(null)
   const resumeRef = useRef(null)
   const puzzleRef = useRef(null)
-  // console.log(pointerCoords);
   // // console.log(homeRef);
   // socket.on("new-connection-alert", m => {
   //   console.log("new connection",m);
@@ -141,7 +140,7 @@ function App() {
       
       <div key={'container'} className={`flex flex-col`}>
         <div ref={homeRef} className=''><Home/></div>
-        <div className='bg-black w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-xl'> Keep scrolling down to continue</div></div>
+        <div className='bg-black bg-cover w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-2xl'> Keep Scrolling Down To Continue...</div></div>
         <div ref={workRef}><Work/></div>
         <div ref={resumeRef}><Resume/></div>
         <div ref={projectsRef}><Projects/></div>
