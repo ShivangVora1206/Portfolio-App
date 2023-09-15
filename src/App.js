@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
+// import io from 'socket.io-client';
 import { useSelector, useDispatch } from "react-redux";
 import { toggleMode, toggleVisibility } from './global_store/slices/navbarSlice';
 import { updatePointerCoords } from './global_store/slices/mousePointerSlice';
-import { updateScrollPosition } from './global_store/slices/scrollPositionSlice';
+import { toggleLoader } from './global_store/slices/loaderSlice';
+import {toggleImageModal} from './global_store/slices/imageModalSlice';
 import { useEffect, useState, useRef } from 'react';
 import {motion} from 'framer-motion';
 import Navbar from './components/Navbar/';
@@ -13,12 +15,22 @@ import Projects from './components/Projects';
 import Stack from './components/Stack';
 import Resume from './components/Resume';
 import PathMatrix from './components/PathMatrix';
+import Spinner from './components/Spinner';
+import CustomToast from './components/CustomToast';
+import { showCustomToast } from './global_store/slices/customToastSlice';
+
+// const socket = io.connect("http://localhost:8000");
+// socket.on("from-server", m => {console.log("from server",m);})
+
+// socket.emit("from-client", "From client");
+// console.log(socket);
 function App() {
 
   const mode = useSelector((state) => {return state.navbar.value.mode})
   const pointerCoords = useSelector((state) => {return state.mousePointerCoord.value})
   const cursorVariant = useSelector((state)=>{return state.cursorVariant.value})
-  const scrollPosition = useSelector((state) => {return state.scrollPosition.value})
+  const loader = useSelector((state)=>{return state.loader.value})
+  const imageUploadModal = useSelector((state)=>{return state.imageModal.value})
   const dispatch = useDispatch()
   const homeRef = useRef(null)
   const workRef = useRef(null)
@@ -27,7 +39,11 @@ function App() {
   const resumeRef = useRef(null)
   const puzzleRef = useRef(null)
   // console.log(pointerCoords);
-  // console.log(homeRef);
+  // // console.log(homeRef);
+  // socket.on("new-connection-alert", m => {
+  //   console.log("new connection",m);
+  //   dispatch(showCustomToast({message:"New user has opened this portfolio!", type:"info"}))
+  // })
 
   const scrollToHome = () => {
     homeRef.current.scrollIntoView({behavior:'smooth'})
@@ -80,6 +96,15 @@ function App() {
     
   }, [])
 
+  useEffect(()=>{
+      dispatch(toggleLoader(true))
+      let timer = setTimeout(() => dispatch(toggleLoader(false)), 2000);
+      return () => {
+        clearTimeout(timer);
+      }
+
+  }, [])
+
   const variants = {
     default:{
       x:pointerCoords.x - 14,
@@ -97,23 +122,33 @@ function App() {
   }
 
   return (
-    <div key={'App'} className="" class={ mode ? 'dark' : '' }>
+    <>
+    
+    {loader ? <div key="loader" className={`z-10 bg-black bg-opacity-40 h-full w-full fixed flex flex-col justify-center items-center `}>
+      <Spinner/>
+    </div> : <></>}
+    <div key={'App'} className={``} class={ mode ? 'dark' : '' }>
+    
       
       <motion.div 
           className='bg-slate-800 dark:bg-gray-200 h-7 w-7 rounded-full fixed z-10 top-0 left-0 pointer-events-none'
           variants={variants}
           animate={cursorVariant}
       />
-        <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>
+        { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>}
+      
+      
+      
       <div key={'container'} className={`flex flex-col`}>
         <div ref={homeRef}><Home/></div>
         <div ref={workRef}><Work/></div>
         <div ref={resumeRef}><Resume/></div>
         <div ref={projectsRef}><Projects/></div>
-        <div ref={stackRef}><Stack/></div>
+        <div ref={stackRef}><Stack onProjectsClick={scrollToProjects}/></div>
         <div ref={puzzleRef}><PathMatrix/></div>
+        <div className='fixed z-[100] bottom-1 w-full'><CustomToast/></div>
         </div>
-    </div>
+    </div></>
   );
 }
 
