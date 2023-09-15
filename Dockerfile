@@ -2,7 +2,7 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-COPY build/ /app/build
+COPY build /app/build
 
 RUN npm install -g serve
 
