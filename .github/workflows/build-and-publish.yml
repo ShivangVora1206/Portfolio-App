@@ -28,6 +28,7 @@ jobs:
 
             - name: Build Docker image
               run: |
+                  pwd
                   docker build -t uchihaitachi12/shivang-vora-portfolio:latest .
                   docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
                   docker push uchihaitachi12/shivang-vora-portfolio:latest
