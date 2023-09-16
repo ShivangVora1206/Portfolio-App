@@ -31,6 +31,7 @@ function App() {
   const cursorVariant = useSelector((state)=>{return state.cursorVariant.value})
   const loader = useSelector((state)=>{return state.loader.value})
   const imageUploadModal = useSelector((state)=>{return state.imageModal.value})
+  const blackBar = useSelector((state)=>{return state.blackBar.value})
   const dispatch = useDispatch()
   const homeRef = useRef(null)
   const workRef = useRef(null)
@@ -136,7 +137,7 @@ function App() {
       />
         { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>}
       
-      
+      <div className={`absolute z-10 bg-black w-full h-[100px] duration-300  ${blackBar ? 'top-[0px]' : '-top-[100px]'}`}></div>
       
       <div key={'container'} className={`flex flex-col`}>
         <div ref={homeRef} className=''><Home/></div>

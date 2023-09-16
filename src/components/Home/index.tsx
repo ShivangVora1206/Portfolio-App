@@ -3,43 +3,47 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateCursorVariant } from "../../global_store/slices/cursorVariantSlice";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
 import {AiOutlinePlus} from "react-icons/ai"
-import {Parallax, ParallaxLayer} from '@react-spring/parallax'
+import { Parallax, ParallaxLayer} from '@react-spring/parallax'
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { toggleBlackBar } from "../../global_store/slices/blackBarSlice";
 export default function Home() {
     const mode = useSelector((state:any) => {return state.navbar.value.mode})
     const variant = useSelector((state:any)=>{return state.cursorVariant.value})
     const dispatch = useDispatch()
     const [header1, setHeader1] = useState(false)
     const [header2, setHeader2] = useState(false)
-    return(
-        <div >
-        <Parallax pages={3} className="scrollbar">
-            <ParallaxLayer  speed={1} factor={2} style={{ backgroundImage: `url(${window.location.origin + "/" + 'reneissance.jpg'})`, backgroundSize:'cover' }}/>
-            <ParallaxLayer  speed={1} factor={1} offset={1} style={{ backgroundImage: `url(${window.location.origin + "/" + 'greekstatue.jpg'})`, backgroundSize:'cover' }}/>
-            {/* <ParallaxLayer offset={1} speed={1} factor={0} style={{ backgroundImage: `url(http://127.0.0.1:3000/bg3.jpeg)`, backgroundSize:'cover' }}/> */}
+    const parallaxRef = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => { 
+        if (parallaxRef.current) {
+            
+            // console.log("parallax ref is not null")
+            // console.log(parallaxRef.current.children[0]);
+            
+            parallaxRef.current.children[0].addEventListener('scroll', (e: any) => {
+                // console.log(e.target.scrollTop);
                 
+                if(e.target.scrollTop > 750 && e.target.scrollTop < 850){
+                    dispatch(toggleBlackBar(true))
+                }else{
+                    dispatch(toggleBlackBar(false))
+            }
+    
+    })
+}}, [])
+
+    return(
+        <div ref={parallaxRef}>
+        <Parallax pages={3} className="scrollbar" >
+            <ParallaxLayer  speed={1} factor={2} style={{ backgroundImage: `url(${window.location.origin + "/" + 'reneissance.jpg'})`, backgroundSize:'cover' }}/>
+            
+            {/* <ParallaxLayer offset={1} speed={1} factor={0} style={{ backgroundImage: `url(http://127.0.0.1:3000/bg3.jpeg)`, backgroundSize:'cover' }}/> */}
             <ParallaxLayer speed={0.70}>
-            <div key={'text-left'} className="flex flex-col justify-center h-full items-center" >
+            <div key={'text-left'} className="absolute z-20 flex flex-col justify-center w-full h-full items-center" >
                 <div className="flex flex-col items-center "><p onMouseEnter={()=>{dispatch(updateCursorVariant("larger"))}} onMouseLeave={()=>{dispatch(updateCursorVariant("default"))}} key={'title'} className="font-coolvetica p-0  md:w-52 lg:w-full text-custom-medium md:text-custom-medium lg:text-[200px] text-gray-200 dark:text-gray-200 cursor-default">{firstName.toUpperCase()} {lastName.toUpperCase()}</p> 
                 <p onMouseEnter={()=>{dispatch(updateCursorVariant("larger"))}} onMouseLeave={()=>{dispatch(updateCursorVariant("default"))}} className="md:w-64 lg:w-96 flex flex-col items-center  font-coolvetica text-custom-small md:text-custom-small lg:text-[90px] text-gray-200 dark:text-gray-200 cursor-default">SOFTWARE DEVELOPER</p> </div>
             </div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0.70}>
-            <div className="flex flex-row h-1/2">
-                    <div className="bg-gray-200 dark:bg-gray-200 w-2 ms-0 mt-60 h-1/2 "></div>
-                    <div className="flex flex-col justify-evenly h-1/2 mt-60 ms-2">
-                        <SiLinkedin onClick={()=>{window.open(socialConstants.linkedin)}} size={25} className="m-1 text-gray-200 dark:text-gray-200 duration-100 hover:translate-x-1"/>
-                        <SiInstagram onClick={()=>{window.open(socialConstants.instagram)}} size={25} className="m-1 text-gray-200 dark:text-gray-200 duration-100 hover:translate-x-1"/>
-                        <SiGithub onClick={()=>{window.open(socialConstants.github)}} size={25} className="m-1 text-gray-200 dark:text-gray-200 duration-100 hover:translate-x-1"/>
-                    </div>
-                </div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={1} speed={2}>
-                <img className="h-[100px] w-[100px] absolute right-[100px] top-[300px]" src="http://127.0.0.1:3000/dove.png"/>
-            </ParallaxLayer>
-            <ParallaxLayer offset={1.25} speed={0.75}>
-            <p key={'about'} className="flex flex-row justify-center items-center font-SF_Pro_Display_Black mx-[60px]  text-[20px] text-white dark:text-gray-200">{aboutText}</p>
             </ParallaxLayer>
             <ParallaxLayer speed={0.80} >
                 <div onMouseEnter={()=>{setHeader1(true)}} onMouseLeave={()=>{setHeader1(false)}}>
@@ -57,7 +61,8 @@ export default function Home() {
                 <AiOutlinePlus size={20} className="absolute text-white left-[250px] top-[220px]"/>
                 <AiOutlinePlus size={20} className="absolute text-white left-[250px] top-[320px]"/>
                 <AiOutlinePlus size={20} className="absolute text-white left-[170px] top-[320px]"/>
-                <AiOutlinePlus size={20} className="absolute text-white left-[325px] top-[190px]"/></div>
+                <AiOutlinePlus size={20} className="absolute text-white left-[325px] top-[190px]"/>
+                </div>
                 <div onMouseEnter={()=>{setHeader2(true)}} onMouseLeave={()=>{setHeader2(false)}}>
                 <h1 className={`absolute text-white bottom-[300px] right-[80px] font-extralight text-lg duration-200 ${header2 ? 'opacity-100' : 'opacity-0'}`}>Prera Juli Sation</h1>
                 <div className="animate-pulse-4 absolute bg-white bottom-[236px] right-[122px] h-[1px] w-[200px] rotate-[-27deg]"/>
@@ -69,6 +74,21 @@ export default function Home() {
                 <AiOutlinePlus size={20} className="absolute text-white right-[350px] bottom-[95px]"/>
                 <AiOutlinePlus size={20} className="absolute text-white right-[150px] bottom-[175px]"/>
                 <AiOutlinePlus size={20} className="absolute text-white right-[125px] bottom-[270px]"/></div>
+            </ParallaxLayer>
+            <ParallaxLayer  speed={0.80} >
+            <div className="bg-gray-200 dark:bg-gray-200 w-2 ms-0 absolute top-[325px] h-[150px] "></div>
+                <div className="absolute top-[325px] h-[130px] ms-3 mt-[10px] justify-between flex flex-col" onMouseEnter={()=>{console.log("mouse entered")}}>
+                <SiLinkedin onClick={()=>{window.open(socialConstants.linkedin)}} size={25} className="m-1 text-gray-200 dark:text-gray-200 duration-100 hover:translate-x-1"/>
+                <SiInstagram onClick={()=>{window.open(socialConstants.instagram)}} size={25} className="m-1 text-gray-200 dark:text-gray-200 duration-100 hover:translate-x-1"/>
+                <SiGithub onClick={()=>{window.open(socialConstants.github)}} size={25} className="m-1 text-gray-200 dark:text-gray-200 duration-100 hover:translate-x-1"/>
+                </div>
+            </ParallaxLayer>
+            <ParallaxLayer  speed={1} factor={1} offset={1} style={{ backgroundImage: `url(${window.location.origin + "/" + 'greekstatue.jpg'})`, backgroundSize:'cover' }}/>
+            <ParallaxLayer offset={1.25} speed={0.5}>
+            <p key={'about'} className="flex flex-row justify-center items-center font-SF_Pro_Display_Black mx-[60px]  text-[20px] text-white dark:text-gray-200">{aboutText}</p>
+            </ParallaxLayer>
+            <ParallaxLayer offset={1.25} speed={2.5}>
+                <img className="h-[100px] w-[100px] absolute right-[100px] top-[300px]" src={`${window.location.origin + "/" + 'dove.png'}`}/>
             </ParallaxLayer>
             
         </Parallax>
