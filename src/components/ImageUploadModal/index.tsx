@@ -14,7 +14,7 @@ export default function ImageUploadModal(props:any) {
         try {
             const response = await axios.post(UPLOAD_IMAGE_BASE_URL, formdata);
             console.log(response);
-            if(response.status === 200){
+            if(response){
                 console.log("Image uploaded successfully");
                 console.log(response.data);
                 dispatch(toggleLoader(false))
@@ -24,6 +24,7 @@ export default function ImageUploadModal(props:any) {
             }else {
                 console.log("Image upload failed");
                 dispatch(toggleLoader(false))
+                dispatch(showCustomToast({message:"error failed in uploading image", type:"error", timeout:2000}))
             }
         } catch (error) {
             dispatch(toggleLoader(false))

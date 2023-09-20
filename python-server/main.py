@@ -28,8 +28,13 @@ def getImages():
 def upload_image():
     if request.method == 'POST':
         uploaded_image = request.files['image']
+        print(uploaded_image.stream.read())
+        print(uploaded_image.filename, "<- uploaded image")
         if uploaded_image:
-            uploaded_image.save('uploads/' + uploaded_image.filename)
+            f = open('uploads/' + uploaded_image.filename, 'wb')
+            f.write(uploaded_image.stream.read())
+            f.close()
+            # uploaded_image.save('uploads/' + uploaded_image.filename)
             imageCutter.setImage('uploads/' + uploaded_image.filename, 'roi')
             if imageCutter.cutImageToGrid(120, 120, 4, 7):
                 return "success"
