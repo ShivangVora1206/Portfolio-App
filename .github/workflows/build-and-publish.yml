@@ -1,0 +1,34 @@
+name: Build and Publish Docker Image
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 14
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build React app
+              run: npm run build
+              env:
+                CI: ""
+
+            - name: Build Docker image
+              run: |
+                  ls
+                  docker build -t uchihaitachi12/shivang-vora-portfolio:latest .
+                  docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+                  docker push uchihaitachi12/shivang-vora-portfolio:latest
