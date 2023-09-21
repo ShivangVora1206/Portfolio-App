@@ -12,6 +12,7 @@ export default function ImageUploadModal(props:any) {
         const formdata = new FormData();
         formdata.append("image", image);
         try {
+            //TODO:Add Error Toast 
             const response = await axios.post(UPLOAD_IMAGE_BASE_URL, formdata);
             console.log(response);
             if(response){
