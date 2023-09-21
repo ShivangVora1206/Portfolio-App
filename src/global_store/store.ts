@@ -8,6 +8,7 @@ import loaderReducer from "./slices/loaderSlice"
 import projectModalReducer from "./slices/projectModalSlice"
 import imageModalSlice from "./slices/imageModalSlice"
 import customToastSlice from "./slices/customToastSlice"
+import blackBarSlice from "./slices/blackBarSlice"
 export default configureStore({
     reducer:{
         counter:counterReducer,
@@ -18,7 +19,8 @@ export default configureStore({
         loader:loaderReducer,
         projectModal:projectModalReducer,
         imageModal:imageModalSlice,
-        customToast:customToastSlice
+        customToast:customToastSlice,
+        blackBar:blackBarSlice
     }
 })
 

@@ -1,8 +1,9 @@
 import cv2 as cv
-
+import numpy as np
 class ImageCutter:
     def __init__(self):
         self.img_path = None
+        self.img_buffer = None
         self.img = None
         self.imgHeight = None
         self.imgWidth = None
@@ -10,18 +11,23 @@ class ImageCutter:
         self.subImages = None
         self.outPath = None
     
-    def setImage(self, img_path, outPath):
-        self.img_path = img_path
-        self.img = cv.imread(self.img_path)
+    def setImage(self, img_path=None, img_buffer=None, outPath=None):
+        if(img_path != None):
+            self.img_path = img_path
+            self.img = cv.imread(self.img_path)
+        elif(img_buffer != None):
+            self.img_buffer = np.asarray(bytearray(img_buffer), dtype="uint8")
+            self.img = cv.imdecode(self.img_buffer, cv.IMREAD_COLOR)
         self.imgShape = self.img.shape
         self.imgHeight, self.imgWidth = self.imgShape[0], self.imgShape[1]
         self.outPath = outPath
     
     def cutImageToGrid(self, subImageHeight, subImageWidth, gridRows, gridCols, offsetX=0, offsetY=0):
+        #TODO:return error code and message
         self.subImages = []
         if subImageHeight*gridRows > self.imgHeight or subImageWidth*gridCols > self.imgWidth:
             return None
-        if self.img_path == None:
+        if self.img_path == None and self.img_buffer.any() == None:
             print("Image not set!")
             return None
         if self.outPath == None:
