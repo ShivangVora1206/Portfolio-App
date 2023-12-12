@@ -137,11 +137,11 @@ function App() {
       />
         { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>}
       
-      <div className={`absolute z-10 bg-black w-full h-[100px] duration-300  ${blackBar ? 'top-[0px]' : '-top-[100px]'}`}></div>
+      {/* <div className={`absolute z-10 bg-black w-full h-[100px] duration-300  ${blackBar ? 'top-[0px]' : '-top-[100px]'}`}></div> */}
       
       <div key={'container'} className={`flex flex-col`}>
         <div ref={homeRef} className=''><Home/></div>
-        <div className='bg-black bg-cover w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-2xl'> Keep Scrolling Down To Continue...</div></div>
+        {/* <div className='bg-black bg-cover w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-2xl'> Keep Scrolling Down To Continue...</div></div> */}
         <div ref={workRef}><Work/></div>
         <div ref={resumeRef}><Resume/></div>
         <div ref={projectsRef}><Projects/></div>
