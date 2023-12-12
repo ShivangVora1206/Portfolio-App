@@ -135,7 +135,8 @@ function App() {
           variants={variants}
           animate={cursorVariant}
       />
-        { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>}
+        { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} />}
+        {/* { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>} */}
       
       {/* <div className={`absolute z-10 bg-black w-full h-[100px] duration-300  ${blackBar ? 'top-[0px]' : '-top-[100px]'}`}></div> */}
       
@@ -146,8 +147,8 @@ function App() {
         <div ref={resumeRef}><Resume/></div>
         <div ref={projectsRef}><Projects/></div>
         <div ref={stackRef}><Stack onProjectsClick={scrollToProjects}/></div>
-        <div ref={puzzleRef}><PathMatrix/></div>
-        <div className='fixed z-[100] bottom-1 w-full'><CustomToast/></div>
+        {/* <div ref={puzzleRef}><PathMatrix/></div> */}
+        {/* <div className='fixed z-[100] bottom-1 w-full'><CustomToast/></div> */}
         </div>
     </div></>
   );
