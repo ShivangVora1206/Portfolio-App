@@ -23,7 +23,7 @@ export default function Navbar(props: NavbarProps) {
 					<p key={"navbar-title-resume"} onClick={()=>{props.onResumeClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>RESUME</p>
 					<p key={"navbar-title-projects"} onClick={()=>{props.onProjectsClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>PROJECTS</p>
 					<p key={"navbar-title-stack"} onClick={()=>{props.onStackClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>STACK</p>
-					<p key={"navbar-title-puzzle"} onClick={()=>{props.onPuzzleClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>PUZZLE</p>
+					{/* <p key={"navbar-title-puzzle"} onClick={()=>{props.onPuzzleClick()}} className='me-2 md:mx-4 hover:-translate-y-1 duration-100 cursor-pointer'>PUZZLE</p> */}
 					{mode ? <MdWbSunny size={'22px'} onClick={()=>{dispatch(toggleMode())}} className='mx-4 mr-5 pb-1 motion-safe:animate-bounce '/> : <FaMoon size={'16px'} className='mx-4 mr-5 pb-1 animate-bounce' onClick={()=>{dispatch(toggleMode())}}/>}
 					
 				</div>

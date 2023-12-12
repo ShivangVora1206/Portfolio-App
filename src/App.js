@@ -31,6 +31,7 @@ function App() {
   const cursorVariant = useSelector((state)=>{return state.cursorVariant.value})
   const loader = useSelector((state)=>{return state.loader.value})
   const imageUploadModal = useSelector((state)=>{return state.imageModal.value})
+  const blackBar = useSelector((state)=>{return state.blackBar.value})
   const dispatch = useDispatch()
   const homeRef = useRef(null)
   const workRef = useRef(null)
@@ -38,7 +39,6 @@ function App() {
   const stackRef = useRef(null)
   const resumeRef = useRef(null)
   const puzzleRef = useRef(null)
-  // console.log(pointerCoords);
   // // console.log(homeRef);
   // socket.on("new-connection-alert", m => {
   //   console.log("new connection",m);
@@ -135,18 +135,20 @@ function App() {
           variants={variants}
           animate={cursorVariant}
       />
-        { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>}
+        { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} />}
+        {/* { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>} */}
       
-      
+      {/* <div className={`absolute z-10 bg-black w-full h-[100px] duration-300  ${blackBar ? 'top-[0px]' : '-top-[100px]'}`}></div> */}
       
       <div key={'container'} className={`flex flex-col`}>
-        <div ref={homeRef}><Home/></div>
+        <div ref={homeRef} className=''><Home/></div>
+        {/* <div className='bg-black bg-cover w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-2xl'> Keep Scrolling Down To Continue...</div></div> */}
         <div ref={workRef}><Work/></div>
         <div ref={resumeRef}><Resume/></div>
         <div ref={projectsRef}><Projects/></div>
         <div ref={stackRef}><Stack onProjectsClick={scrollToProjects}/></div>
-        <div ref={puzzleRef}><PathMatrix/></div>
-        <div className='fixed z-[100] bottom-1 w-full'><CustomToast/></div>
+        {/* <div ref={puzzleRef}><PathMatrix/></div> */}
+        {/* <div className='fixed z-[100] bottom-1 w-full'><CustomToast/></div> */}
         </div>
     </div></>
   );

@@ -17,34 +17,7 @@ module.exports = {
 				"home-image-dark": "url('../public/game-bg-4.gif')",
 				"resume-bg": "url('../public/game-bg-2-m.gif')",
 				"resume-bg-dark": "url('../public/game-bg.gif')",
-				"path-cell-1-1":"url('../public/image_puzzle_1/1_1.png')",
-				"path-cell-1-2":"url('../public/image_puzzle_1/1_2.png')",
-				"path-cell-1-3":"url('../public/image_puzzle_1/1_3.png')",
-				"path-cell-1-4":"url('../public/image_puzzle_1/1_4.png')",
-				"path-cell-1-5":"url('../public/image_puzzle_1/1_5.png')",
-				"path-cell-1-6":"url('../public/image_puzzle_1/1_6.png')",
-				"path-cell-1-7":"url('../public/image_puzzle_1/1_7.png')",
-				"path-cell-2-1":"url('../public/image_puzzle_1/2_1.png')",
-				"path-cell-2-2":"url('../public/image_puzzle_1/2_2.png')",
-				"path-cell-2-3":"url('../public/image_puzzle_1/2_3.png')",
-				"path-cell-2-4":"url('../public/image_puzzle_1/2_4.png')",
-				"path-cell-2-5":"url('../public/image_puzzle_1/2_5.png')",
-				"path-cell-2-6":"url('../public/image_puzzle_1/2_6.png')",
-				"path-cell-2-7":"url('../public/image_puzzle_1/2_7.png')",
-				"path-cell-3-1":"url('../public/image_puzzle_1/3_1.png')",
-				"path-cell-3-2":"url('../public/image_puzzle_1/3_2.png')",
-				"path-cell-3-3":"url('../public/image_puzzle_1/3_3.png')",
-				"path-cell-3-4":"url('../public/image_puzzle_1/3_4.png')",
-				"path-cell-3-5":"url('../public/image_puzzle_1/3_5.png')",
-				"path-cell-3-6":"url('../public/image_puzzle_1/3_6.png')",
-				"path-cell-3-7":"url('../public/image_puzzle_1/3_7.png')",
-				"path-cell-4-1":"url('../public/image_puzzle_1/4_1.png')",
-				"path-cell-4-2":"url('../public/image_puzzle_1/4_2.png')",
-				"path-cell-4-3":"url('../public/image_puzzle_1/4_3.png')",
-				"path-cell-4-4":"url('../public/image_puzzle_1/4_4.png')",
-				"path-cell-4-5":"url('../public/image_puzzle_1/4_5.png')",
-				"path-cell-4-6":"url('../public/image_puzzle_1/4_6.png')",
-				"path-cell-4-7":"url('../public/image_puzzle_1/4_7.png')",
+				// "textured": "url('../public/textured_wall.jpg')",
 
 			},
 			fontSize: {
@@ -86,6 +59,8 @@ module.exports = {
 			},
 			'animation': {
 				'text':'text 5s ease infinite',
+				'pulse-3':'pulse 3s ease infinite',
+				'pulse-4':'pulse 4s ease infinite',
 			},
 			'keyframes': {
 				'text': {
@@ -98,11 +73,15 @@ module.exports = {
 						'background-position': 'right center'
 					}
 				},
-			}
+				'pulse': {
+					'0%, 100%': { opacity: 1 },
+        			'50%': { opacity: 0.1 },
+			},
 			
 		},
 		
 	},
+	},
 	plugins: [],
 	darkMode: "class",
-};
+}

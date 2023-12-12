@@ -6,6 +6,7 @@ from imagecutter import ImageCutter
 app = Flask(__name__)
 
 imageCutter = ImageCutter()
+uploadsPath = 'python-server/uploads/'
 
 CORS(app, origins=["http://localhost:3000"], supports_credentials=True)
 @app.route('/', methods=['GET'])
@@ -26,11 +27,15 @@ def getImages():
 
 @app.route('/Images/v1/uploadImage', methods=['POST'])
 def upload_image():
+    #TODO: return error code and message
     if request.method == 'POST':
         uploaded_image = request.files['image']
+        # print(uploaded_image.stream.read())
+        print(uploaded_image.filename, "<- uploaded image")
         if uploaded_image:
-            uploaded_image.save('uploads/' + uploaded_image.filename)
-            imageCutter.setImage('uploads/' + uploaded_image.filename, 'roi')
+            # uploaded_image.save(uploadsPath + uploaded_image.filename)
+            # imageCutter.setImage('python-server\\uploads\\' + uploaded_image.filename, 'python-server\\roi')
+            imageCutter.setImage(img_buffer=uploaded_image.stream.read(), outPath='python-server\\roi')
             if imageCutter.cutImageToGrid(120, 120, 4, 7):
                 return "success"
             else:

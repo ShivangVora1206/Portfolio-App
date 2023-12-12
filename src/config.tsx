@@ -69,7 +69,7 @@ export const projects:Project[] = [
 	{
 		name:"Portfolio Website",
 		description:"project description",
-		stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git', 'github', 'docker'],
+		stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git', 'github', 'docker', 'typescript'],
 		image:"portfolio.png",
 		github:"https://github.com/ShivangVora1206/Portfolio-App"
 	},
@@ -261,7 +261,7 @@ export const iconsPathMap:IconsPathMapInterface = {
 export const techStackList = [
 	{name:'python', bgtailwind:'dark:bg-red-500 bg-violet-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['python'].toString()} size={3}/>},
 	{name:'vscode', bgtailwind:'dark:bg-red-600 bg-violet-700', icon:<TbBrandVscode size={55} className="m-1 p-3 sm:p-1"/>},
-	{name:'javascript', bgtailwind:'dark:bg-red-700 bg-violet-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['javascript'].toString()} size={3}/>},
+	{name:'typescript', bgtailwind:'dark:bg-red-700 bg-violet-600', icon:<SiTypescript size={50} className="m-1 p-3 sm:p-1"/>},
 	{name:'docker', bgtailwind:'dark:bg-red-800 bg-violet-500', icon:<BiLogoDocker size={55} className="m-1 p-3 sm:p-1"/>},
 	{name:'html', bgtailwind:'dark:bg-pink-500 bg-purple-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['html'].toString()} size={3}/>}, 
 	{name:'git', bgtailwind:'dark:bg-pink-600 bg-purple-700', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['git'].toString()} size={3}/>}, 
@@ -271,7 +271,7 @@ export const techStackList = [
 	{name:'react', bgtailwind:'dark:bg-purple-600 bg-pink-700', icon:<BiLogoReact size={55} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'mysql', bgtailwind:'dark:bg-purple-700 bg-pink-600', icon:<SiMysql size={55} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'android', bgtailwind:'dark:bg-purple-800 bg-pink-500', icon:<SiAndroid size={50} className="m-1 p-3 sm:p-1"/>},
-	{name:'androidstudio', bgtailwind:'dark:bg-violet-500 bg-red-800', icon:<SiAndroidstudio size={55} className="m-1 p-3 sm:p-1"/>}, 
+	{name:'javascript', bgtailwind:'dark:bg-violet-500 bg-red-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['javascript'].toString()} size={3}/>}, 
 	{name:'redux', bgtailwind:'dark:bg-violet-600 bg-red-700', icon:<TbBrandRedux size={52} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'java', bgtailwind:'dark:bg-violet-700 bg-red-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['java'].toString()} size={3}/>}, 
 	{name:'tailwind', bgtailwind:'dark:bg-violet-800 bg-red-500', icon:<BiLogoTailwindCss size={55} className="m-1 p-3 sm:p-1"/>}
