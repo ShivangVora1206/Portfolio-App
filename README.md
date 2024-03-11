@@ -1,6 +1,6 @@
 # Shivang Vora's Portfolio
 
-Check out the project live on [here](https://github.com/ShivangVora1206/Portfolio-App).
+Check out the project live [here](https://portfolio-app-ten-teal.vercel.app/).
 
 ## Available on Docker Hub
 
