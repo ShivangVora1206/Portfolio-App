@@ -67,8 +67,43 @@ export interface IconsPathMapInterface {
 }
 export const projects:Project[] = [
 	{
+		name:"Krisha Dave Portfolio",
+		description:"Developed and deployed a portfolio website for Krisha Dave, a talented artist and design student in Italy. Deployed on Vercel with a domain from namecheap.com to achieve the goal of operating at the lowest possible cost. Built with React and hosted on a private Github Repository for smooth CI/CD flow with Vercel.",
+		stack:['react', 'tailwind', 'vscode', 'git', 'github', 'typescript'],
+		image:"krishadave.png",
+		github:"https://www.krishadave.com/"
+	},
+	{
+		name:"Uni Assistant Android App",
+		description:"This is an Android application providing the same uni-assistant functionality but in a more accessible manner. The app is built using Java and Android Studio.",
+		stack:['java', 'android', 'androidstudio', 'mysql', 'git', 'github'],
+		image:"uniassistantandroid.png",
+		github:""
+	},
+	{
+		name:"Uni Assistant script",
+		description:"This is a simple tool to help students keep track of university applications currently available. It is utilizing the uni-assist APIs to fetch the data and display it in a user-friendly manner. The data is displayed in a terminal because it looks cooler.",
+		stack:['python', 'vscode', 'git', 'github'],
+		image:"uniassistant.png",
+		github:"https://github.com/ShivangVora1206/uni-assistant"
+	},
+	{
+		name:"Subscrypt",
+		description:"Subscrypt is a Python class designed to facilitate file fragmentation and defragmentation using subpart salting and the Fernet encryption scheme from the cryptography library.",
+		stack:['python', 'vscode', 'git', 'github'],
+		image:"subscrypt.png",
+		github:"https://github.com/ShivangVora1206/subscrypt"	
+	},
+	{
+		name:"Image Annotation Tool",
+		description:"This component is a comprehensive solution for adding, managing, and interacting with annotations on images within a web application, integrating various external libraries and custom components for a rich user experience.",
+		stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git', 'github', 'typescript'],
+		image:"imageannotation.png",
+		github:"https://github.com/ShivangVora1206/Image-Annotation"
+	},
+	{
 		name:"Portfolio Website",
-		description:"project description",
+		description:"This is the portfolio website you are currently viewing. It is a single page application built using React, Tailwind CSS, and Redux. The website is designed to be responsive and user-friendly.",
 		stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git', 'github', 'docker', 'typescript'],
 		image:"portfolio.png",
 		github:"https://github.com/ShivangVora1206/Portfolio-App"
@@ -122,13 +157,13 @@ export const projects:Project[] = [
 		image:"noxlog.png",
 		github:"https://github.com/ShivangVora1206/NoxLog"
 	},
-	{
-		name:"TODO App",
-		description:"Discover seamless task management with our HTML, CSS, and JS-powered Todo app. Leveraging a Node.js server and Mongoose, tasks are securely stored and retrieved from a MongoDB database. Experience organized productivity at your fingertips.",
-		stack:['node', 'html', 'css', 'javascript', 'mongodb', 'git', 'github'],
-		image:"todoapp.png",
-		github:"https://github.com/ShivangVora1206/todo-app-nodejs"
-	},
+	// {
+	// 	name:"TODO App",
+	// 	description:"Discover seamless task management with our HTML, CSS, and JS-powered Todo app. Leveraging a Node.js server and Mongoose, tasks are securely stored and retrieved from a MongoDB database. Experience organized productivity at your fingertips.",
+	// 	stack:['node', 'html', 'css', 'javascript', 'mongodb', 'git', 'github'],
+	// 	image:"todoapp.png",
+	// 	github:"https://github.com/ShivangVora1206/todo-app-nodejs"
+	// },
 
 	{
 		name:"Pomodoro App",
@@ -161,7 +196,7 @@ export const socialConstants = {
 }
 
 export const navbarLogo:string = "svlogowhite-no-bg.png";
-export const resumeLink:string = "ShivangVoraResume V13.pdf";
+export const resumeLink:string = "ShivangVoraResumeV16-ats.pdf";
 export const firstName:string = "Shivang";
 export const lastName:string = "Vora";
 export const aboutText:string ="Allow me to introduce myself—I'm Shivang Vora, a software engineer with a profound love for exploring the vast realm of technology and crafting innovative applications. I find immense joy in staying at the forefront of emerging technologies, constantly seeking new challenges to broaden my skill set and push the boundaries of what I can achieve. There's nothing quite like the satisfaction of transforming ideas into functional and user-friendly solutions.";
@@ -169,6 +204,16 @@ export const aboutText:string ="Allow me to introduce myself—I'm Shivang Vora,
 export const colorCodes:string[] = ['bg-red-600', 'bg-orange-600', 'bg-yellow-500', 'bg-green-600', 'bg-teal-600', 'bg-blue-600', 'bg-indigo-600'];
 
 export const companyDetails:Company[] = [
+	{
+		name: "Krishadave.com - Freelance Web Developer",
+		content: [
+			"Developed and deployed a portfolio website for Krisha Dave, an art student in Italy.",
+			"Deployed on Vercel with a domain from namecheap.com to achieve the goal of operating at the lowest possible cost.",
+			"Built with React and hosted on a private Github Repository for smooth CI/CD flow with Vercel.",
+		],
+		startDate: "03/24",
+		endDate: "Current",
+	},
 	{
 		name: "General Aeronutics Pvt. Ltd. - Android Developer",
 		content: [
@@ -202,24 +247,24 @@ export const companyDetails:Company[] = [
 		startDate: "02/22",
 		endDate: "04/22",
 	},
-	{
-		name: "Magtapp Pvt. Ltd. - Video Editor",
-		content: [
-			"Created multiple ads for promotional purposes",
-			"Produced in-app tutorial videos for several different devices",
-		],
-		startDate: "05/20",
-		endDate: "08/20",
-	},
-	{
-		name: "L&D Global Mumbai Chapter - Editor In Chief",
-		content: [
-			"Created and edited all the assets and videos for TBGM Season 1",
-			"Consulted on Season 2 and Season 3 of TBGM",
-		],
-		startDate: "05/19",
-		endDate: "06/19",
-	},
+	// {
+	// 	name: "Magtapp Pvt. Ltd. - Video Editor",
+	// 	content: [
+	// 		"Created multiple ads for promotional purposes",
+	// 		"Produced in-app tutorial videos for several different devices",
+	// 	],
+	// 	startDate: "05/20",
+	// 	endDate: "08/20",
+	// },
+	// {
+	// 	name: "L&D Global Mumbai Chapter - Editor In Chief",
+	// 	content: [
+	// 		"Created and edited all the assets and videos for TBGM Season 1",
+	// 		"Consulted on Season 2 and Season 3 of TBGM",
+	// 	],
+	// 	startDate: "05/19",
+	// 	endDate: "06/19",
+	// },
 ];
 
 
