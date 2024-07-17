@@ -1,5 +1,5 @@
 import React from "react";
-import { mdiGithub } from '@mdi/js'
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { projects } from "../../config";
 import ProjectListItem from "../ProjectListItem";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,12 +43,10 @@ export default function Projects(props:any) {
 			<div key={'description-container'} className="relative w-[350px] h-[300px] m-10 overflow-y-scroll no-scrollbar">
 					<p key={'description-text'} className="font-minecraft">{currentProject.description}</p>
 			</div>
-			<div className="w-10 hover:scale-125 mb-4 duration-150" onClick={()=>{window.open(currentProject.github)}}>
-						<Icon
-							className="m-1"
-							path={mdiGithub}
-							size={1}/>
-					</div>
+			{currentProject.github ? <div className="w-10 mb-4" onClick={()=>{window.open(currentProject.github)}}>
+						<FaExternalLinkAlt className="m-1 hover:scale-125 hover:shadow-md duration-150"/>
+					</div> : <></>}
+			
 				</div>
 			</div>
 		</div> : <></> }
