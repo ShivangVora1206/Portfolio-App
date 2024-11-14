@@ -196,7 +196,7 @@ export const socialConstants = {
 }
 
 export const navbarLogo:string = "svlogowhite-no-bg.png";
-export const resumeLink:string = "ShivangVoraResumeV16-ats.pdf";
+export const resumeLink:string = "ShivangResume.pdf";
 export const firstName:string = "Shivang";
 export const lastName:string = "Vora";
 export const aboutText:string ="Allow me to introduce myself—I'm Shivang Vora, a software engineer with a profound love for exploring the vast realm of technology and crafting innovative applications. I find immense joy in staying at the forefront of emerging technologies, constantly seeking new challenges to broaden my skill set and push the boundaries of what I can achieve. There's nothing quite like the satisfaction of transforming ideas into functional and user-friendly solutions.";
