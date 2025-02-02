@@ -67,6 +67,13 @@ export interface IconsPathMapInterface {
 }
 export const projects:Project[] = [
 	{
+		name:"Security Magazine",
+		description:"Security Magazine Online is an innovative online radio platform that offers a seamless audio experience with custom waveform visualizations. Built using React, TypeScript, and Tailwind CSS, it features a user-friendly interface for playing and visualizing audio tracks. The platform supports various functionalities including audio playback with pause/play ensuring a rich and interactive listening experience. The website is a prototype for a magazine by creative director Krisha Dave and editor in chief Karim Farekh.",
+		stack:['typescript', 'react', 'tailwind', 'html', 'css', 'vscode', 'git', 'github' ],
+		image:"security.png",
+		github:"https://www.securitymag.online/"
+	},
+	{
 		name:"Krisha Dave Portfolio",
 		description:"Developed and deployed a portfolio website for Krisha Dave, a talented artist and design student in Italy. Deployed on Vercel with a domain from namecheap.com to achieve the goal of operating at the lowest possible cost. Built with React and hosted on a private Github Repository for smooth CI/CD flow with Vercel.",
 		stack:['react', 'tailwind', 'vscode', 'git', 'github', 'typescript'],
@@ -165,13 +172,13 @@ export const projects:Project[] = [
 	// 	github:"https://github.com/ShivangVora1206/todo-app-nodejs"
 	// },
 
-	{
-		name:"Pomodoro App",
-		description:"An intuitive Pomodoro Clock application with an attractive user interface wherein the user can set a timer for work and break according to the concepts of a Pomodoro Clock. In order to encourage prolonged attention and prevent mental tiredness, this well-known time management technique requires one to alternate focused work spurts called pomodoros with frequent brief breaks",
-		stack:['javascript', 'html', 'css', 'git'],
-		image:"pomodoro.png",
-		github:"https://github.com/ShivangVora1206"
-	},
+	// {
+	// 	name:"Pomodoro App",
+	// 	description:"An intuitive Pomodoro Clock application with an attractive user interface wherein the user can set a timer for work and break according to the concepts of a Pomodoro Clock. In order to encourage prolonged attention and prevent mental tiredness, this well-known time management technique requires one to alternate focused work spurts called pomodoros with frequent brief breaks",
+	// 	stack:['javascript', 'html', 'css', 'git'],
+	// 	image:"pomodoro.png",
+	// 	github:"https://github.com/ShivangVora1206"
+	// },
 	{
 		name:"Project ASA",
 		description:"An attendance visualization solution for parents and students to view their attendance in detail using only their PRN. Uses Google Sheets API along with a FastAPI application to fetch, parse and provide the data. The dashboard is designed to be simple and easy to understand using color coded charts and numeric values to make it easy for a student or a parent to understand the data",
@@ -204,6 +211,16 @@ export const aboutText:string ="Allow me to introduce myself—I'm Shivang Vora,
 export const colorCodes:string[] = ['bg-red-600', 'bg-orange-600', 'bg-yellow-500', 'bg-green-600', 'bg-teal-600', 'bg-blue-600', 'bg-indigo-600'];
 
 export const companyDetails:Company[] = [
+	{
+		name: "Securitymag.online - Freelance Web Developer",
+		content: [
+			"Developed and deployed a web radio project for Security Magazine, a prototype magazine by students in Italy.",
+			"Deployed on Vercel with a domain from namecheap.com to achieve the goal of operating at the lowest possible cost.",
+			"Built with React and hosted on a private Github Repository for smooth CI/CD flow with Vercel.",
+		],
+		startDate: "22/01/25",
+		endDate: "30/01/25",
+	},
 	{
 		name: "Krishadave.com - Freelance Web Developer",
 		content: [
