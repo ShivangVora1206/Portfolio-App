@@ -16,7 +16,7 @@ import Icon from "@mdi/react";
 import React from "react";
 import {BiLogoMongodb, BiLogoDjango, BiLogoDocker, BiLogoFlutter, BiLogoGmail, BiLogoTailwindCss, BiLogoReact, BiLogoFlask} from 'react-icons/bi';
 import {TbBrandRedux, TbBrandVscode} from 'react-icons/tb';
-import {SiMysql, SiPostgresql, SiTypescript, SiNextdotjs, SiDart, SiLinkedin, SiAndroid, SiAndroidstudio, SiSocketdotio} from 'react-icons/si';
+import {SiMysql, SiPostgresql, SiTypescript, SiNextdotjs, SiDart, SiLinkedin, SiAndroid, SiAndroidstudio, SiSocketdotio, SiTensorflow} from 'react-icons/si';
 import {GrInstagram} from 'react-icons/gr';
 import { JSXElementConstructor } from 'react';
 import { IconType } from "react-icons/lib";
@@ -66,6 +66,13 @@ export interface IconsPathMapInterface {
   [key: string]:  string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal; // Or replace 'string' with the appropriate type if using icon names instead of JSX elements
 }
 export const projects:Project[] = [
+	{
+		name:"MedicAI",
+		description:"• Developed a real-time patient monitoring dashboard using React, Redux, and Flask-SocketIO\n• Implemented WebSocket communication between the client and server to provide real-time updates on patient data.\n• Integrated TensorFlow Keras models for predictive analytics and patient alert states.\n• Utilized Flask-SocketIO for handling WebSocket connections, room management, and message broadcasting.\n• Designed and developed a responsive user interface with React and Tailwind CSS.\n• Managed application state using Redux and React-Redux for efficient data flow and state management.\n• Configured and deployed the backend server with Flask, ensuring secure and scalable WebSocket connections.\n• Performed data preprocessing and scaling using Scikit-learn to prepare patient data for model predictions.\n• Collaborated with a cross-functional team to ensure seamless integration of frontend and backend components.",
+		stack:['typescript', 'react', 'tailwind', 'git', 'github', 'flask', 'tensorflow', 'socketio', 'redux' ],
+		image:"medicai.png",
+		github:"https://github.com/ShivangVora1206/MedicAl"
+	},
 	{
 		name:"Security Magazine",
 		description:"Security Magazine Online is an innovative online radio platform that offers a seamless audio experience with custom waveform visualizations. Built using React, TypeScript, and Tailwind CSS, it features a user-friendly interface for playing and visualizing audio tracks. The platform supports various functionalities including audio playback with pause/play ensuring a rich and interactive listening experience. The website is a prototype for a magazine by creative director Krisha Dave and editor in chief Karim Farekh.",
@@ -315,7 +322,8 @@ export const iconsPathMap:IconsPathMapInterface = {
 	redux: <TbBrandRedux size={22} className="m-1"/>,
 	vscode: <TbBrandVscode size={25} className="m-1"/>,
 	tailwind: <BiLogoTailwindCss size={25} className="m-1"/>,
-	socketio: <SiSocketdotio size={25} className="m-1"/>,
+	socketio: <SiSocketdotio size={20} className="m-1"/>,
+	tensorflow: <SiTensorflow size={20} className="m-1"/>
 	
 }
 
@@ -325,11 +333,11 @@ export const techStackList = [
 	{name:'vscode', bgtailwind:'dark:bg-red-600 bg-violet-700', icon:<TbBrandVscode size={55} className="m-1 p-3 sm:p-1"/>},
 	{name:'typescript', bgtailwind:'dark:bg-red-700 bg-violet-600', icon:<SiTypescript size={50} className="m-1 p-3 sm:p-1"/>},
 	{name:'docker', bgtailwind:'dark:bg-red-800 bg-violet-500', icon:<BiLogoDocker size={55} className="m-1 p-3 sm:p-1"/>},
-	{name:'html', bgtailwind:'dark:bg-pink-500 bg-purple-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['html'].toString()} size={3}/>}, 
+	{name:'flask', bgtailwind:'dark:bg-pink-500 bg-purple-800', icon:<BiLogoFlask size={50} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'git', bgtailwind:'dark:bg-pink-600 bg-purple-700', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['git'].toString()} size={3}/>}, 
 	{name:'node', bgtailwind:'dark:bg-pink-700 bg-purple-600', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['node'].toString()} size={3}/>}, 
 	{name:'mongodb', bgtailwind:'dark:bg-pink-800 bg-purple-500', icon:<BiLogoMongodb size={55} className="m-1 p-3 sm:p-1"/>},
-	{name:'css', bgtailwind:'dark:bg-purple-500 bg-pink-800', icon:<Icon className="m-1 p-3 sm:p-2" path={iconsPathMap['css'].toString()} size={3}/>}, 
+	{name:'socketio', bgtailwind:'dark:bg-purple-500 bg-pink-800', icon: <SiSocketdotio size={50} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'react', bgtailwind:'dark:bg-purple-600 bg-pink-700', icon:<BiLogoReact size={55} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'mysql', bgtailwind:'dark:bg-purple-700 bg-pink-600', icon:<SiMysql size={55} className="m-1 p-3 sm:p-1"/>}, 
 	{name:'android', bgtailwind:'dark:bg-purple-800 bg-pink-500', icon:<SiAndroid size={50} className="m-1 p-3 sm:p-1"/>},
