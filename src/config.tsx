@@ -71,7 +71,7 @@ export const projects:Project[] = [
 		description:"• Developed a real-time patient monitoring dashboard using React, Redux, and Flask-SocketIO\n• Implemented WebSocket communication between the client and server to provide real-time updates on patient data.\n• Integrated TensorFlow Keras models for predictive analytics and patient alert states.\n• Utilized Flask-SocketIO for handling WebSocket connections, room management, and message broadcasting.\n• Designed and developed a responsive user interface with React and Tailwind CSS.\n• Managed application state using Redux and React-Redux for efficient data flow and state management.\n• Configured and deployed the backend server with Flask, ensuring secure and scalable WebSocket connections.\n• Performed data preprocessing and scaling using Scikit-learn to prepare patient data for model predictions.\n• Collaborated with a cross-functional team to ensure seamless integration of frontend and backend components.",
 		stack:['typescript', 'react', 'tailwind', 'git', 'github', 'flask', 'tensorflow', 'socketio', 'redux' ],
 		image:"medicai.png",
-		github:"https://github.com/ShivangVora1206/PatientMonitorGrid"
+		github:"https://github.com/ShivangVora1206/MedicAl"
 	},
 	{
 		name:"Security Magazine",
