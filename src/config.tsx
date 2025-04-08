@@ -291,6 +291,29 @@ export const companyDetails:Company[] = [
 	// },
 ];
 
+export const certificates = [
+	{
+		title: "Data Science for Engineers",
+		institution: "IIT Madras",
+		link: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS53S65020146630165146",
+	},
+	{
+		title: "AWS Educate Cloud Computing",
+		institution: "Amazon Web Services",
+		link: "https://www.credly.com/badges/7f490908-7632-492a-8b65-7b478c2720ed",
+	},
+	{
+		title: "Data Science Foundations",
+		institution: "IBM",
+		link: "https://www.credly.com/badges/52d26450-f9c0-4835-b87b-6dedcfe3d003",
+	},
+	{
+		title: "Automating The Boring Stuff with Python",
+		institution: "Udemy",
+		link: "https://www.udemy.com/certificate/UC-9419dc0f-5c2c-4fbf-a9f5-b93b73a5499b/",
+	},
+]
+
 
 export const iconsPathMap:IconsPathMapInterface = {
 	python: mdiLanguagePython,
