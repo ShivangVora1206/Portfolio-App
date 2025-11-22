@@ -219,6 +219,26 @@ export const colorCodes:string[] = ['bg-red-600', 'bg-orange-600', 'bg-yellow-50
 
 export const companyDetails:Company[] = [
 	{
+		name: "FuE-Zentrum FH Kiel GmbH - Artificial Intelligence Research Assistant ",
+		content: [
+			"Implemented an in-memory vector document store using FAISS with HuggingFace Sentence Transformers for semantic retrieval.",
+"Built an AI tool for structured data extraction from unstructured documents, enabling downstream analytics.",
+"Optimized per-document processing with intelligent caching, improving processing time by 93%."
+		],
+		startDate: "15/09/25",
+		endDate: "Present",
+	},
+	{
+		name: "Opencampus - Python Instructor",
+		content: [
+			"Guided and supported 35+ learners through core Python concepts, problem-solving, and best practices.",
+"Delivered live coding demos; resolved doubts; mentored personal project implementations.",
+"Planned and structured course material; conducted quizzes for assessment and revision."
+		],
+		startDate: "01/04/25",
+		endDate: "30/08/25",
+	},
+	{
 		name: "Securitymag.online - Freelance Web Developer",
 		content: [
 			"Developed and deployed a web radio project for Security Magazine, a prototype magazine by students in Italy.",

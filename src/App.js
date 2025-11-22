@@ -144,7 +144,7 @@ function App() {
         <div ref={homeRef} className=''><Home/></div>
         {/* <div className='bg-black bg-cover w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-2xl'> Keep Scrolling Down To Continue...</div></div> */}
         <div ref={workRef}><Work/></div>
-        <div ref={resumeRef}><Resume/></div>
+        {/* <div ref={resumeRef}><Resume/></div> */}
         <div ref={projectsRef}><Projects/></div>
         <div ref={stackRef}><Stack onProjectsClick={scrollToProjects}/></div>
         {/* <div ref={puzzleRef}><PathMatrix/></div> */}
