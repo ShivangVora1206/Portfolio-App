@@ -4,6 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			rotate: {
+				
 				'270': '270deg',
 			},
 			backgroundImage: {
@@ -16,11 +17,14 @@ module.exports = {
 				"home-image-dark": "url('../public/game-bg-4.gif')",
 				"resume-bg": "url('../public/game-bg-2-m.gif')",
 				"resume-bg-dark": "url('../public/game-bg.gif')",
+				// "textured": "url('../public/textured_wall.jpg')",
+
 			},
 			fontSize: {
 				"custom-large": "230px",
 				"custom-medium": "100px",
 				"custom-small": "80px",
+				
 			},
 			fontFamily: {
 				bombing: ["BOMBING"],
@@ -32,7 +36,6 @@ module.exports = {
 				SF_Pro_Text_Bold: ["SFProTextBold"],
 				SF_Pro_Text_Heavy: ["SFProTextHeavy"],
 				SF_Pro_Text_Regular: ["SFProTextRegular"],
-				mono: ['Courier New', 'monospace'],
 			},
 			width: {
 				"custom-large-width": "900px",
@@ -54,13 +57,12 @@ module.exports = {
 			top:{
 				"custom-top":"200px",
 			},
-			animation: {
+			'animation': {
 				'text':'text 5s ease infinite',
 				'pulse-3':'pulse 3s ease infinite',
 				'pulse-4':'pulse 4s ease infinite',
-				'glitch': 'glitch 1s linear infinite',
 			},
-			keyframes: {
+			'keyframes': {
 				'text': {
 					'0%, 100%': {
 						'background-size':'200% 200%',
@@ -73,30 +75,12 @@ module.exports = {
 				},
 				'pulse': {
 					'0%, 100%': { opacity: 1 },
-					'50%': { opacity: 0.1 },
-				},
-				'glitch': {
-					'0%': {
-						transform: 'translate(0)',
-					},
-					'20%': {
-						transform: 'translate(-2px, 2px)',
-					},
-					'40%': {
-						transform: 'translate(-2px, -2px)',
-					},
-					'60%': {
-						transform: 'translate(2px, 2px)',
-					},
-					'80%': {
-						transform: 'translate(2px, -2px)',
-					},
-					'100%': {
-						transform: 'translate(0)',
-					},
-				},
+        			'50%': { opacity: 0.1 },
 			},
+			
 		},
+		
+	},
 	},
 	plugins: [],
 	darkMode: "class",

@@ -1,96 +1,163 @@
+
 import './App.css';
-import { useEffect, useState } from 'react';
-import Scene3D from './components/Scene3D';
-import HeroSection from './components/HeroSection';
-import ExperienceSection from './components/ExperienceSection';
-import ProjectsSection from './components/ProjectsSection';
-import TechStackSection from './components/TechStackSection';
-import ArticlesSection from './components/ArticlesSection';
+// import io from 'socket.io-client';
+import { useSelector, useDispatch } from "react-redux";
+import { toggleMode, toggleVisibility } from './global_store/slices/navbarSlice';
+import { updatePointerCoords } from './global_store/slices/mousePointerSlice';
+import { toggleLoader } from './global_store/slices/loaderSlice';
+import {toggleImageModal} from './global_store/slices/imageModalSlice';
+import { useEffect, useState, useRef } from 'react';
+import {motion} from 'framer-motion';
+import Navbar from './components/Navbar/';
+import Home from './components/Home';
+import Work from './components/Work';
+import Projects from './components/Projects';
+import Stack from './components/Stack';
+import Resume from './components/Resume';
+import PathMatrix from './components/PathMatrix';
 import Spinner from './components/Spinner';
+import CustomToast from './components/CustomToast';
+import { showCustomToast } from './global_store/slices/customToastSlice';
 
+// const socket = io.connect("http://localhost:8000");
+// socket.on("from-server", m => {console.log("from server",m);})
+
+// socket.emit("from-client", "From client");
+// console.log(socket);
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const mode = useSelector((state) => {return state.navbar.value.mode})
+  const pointerCoords = useSelector((state) => {return state.mousePointerCoord.value})
+  const cursorVariant = useSelector((state)=>{return state.cursorVariant.value})
+  const loader = useSelector((state)=>{return state.loader.value})
+  const imageUploadModal = useSelector((state)=>{return state.imageModal.value})
+  const blackBar = useSelector((state)=>{return state.blackBar.value})
+  const dispatch = useDispatch()
+  const homeRef = useRef(null)
+  const workRef = useRef(null)
+  const projectsRef = useRef(null)
+  const stackRef = useRef(null)
+  const resumeRef = useRef(null)
+  const puzzleRef = useRef(null)
+  // // console.log(homeRef);
+  // socket.on("new-connection-alert", m => {
+  //   console.log("new connection",m);
+  //   dispatch(showCustomToast({message:"New user has opened this portfolio!", type:"info"}))
+  // })
+
+  const scrollToHome = () => {
+    homeRef.current.scrollIntoView({behavior:'smooth'})
+  }
+  const scrollToWork = () => {
+    workRef.current.scrollIntoView({behavior:'smooth'})
+  }
+  const scrollToProjects = () => {
+    projectsRef.current.scrollIntoView({behavior:'smooth'})
+  }
+  const scrollToStack = () => {
+    stackRef.current.scrollIntoView({behavior:'smooth'})
+  }
+  const scrollToResume = () => {
+    resumeRef.current.scrollIntoView({behavior:'smooth'})
+  }
+  const scrollToPuzzle = () => {
+    puzzleRef.current.scrollIntoView({behavior:'smooth'})
+  }
+
+  useEffect(()=>{
+    
     const updateMousePosition = (e) => {
-      setMousePosition({
+      // console.log(e);
+      let payload = {
         x: e.clientX,
         y: e.clientY
-      });
-    };
-
-    const updateTouchPosition = (e) => {
-      if (e.touches && e.touches.length > 0) {
-        setMousePosition({
-          x: e.touches[0].clientX,
-          y: e.touches[0].clientY
-        });
       }
-    };
+      dispatch(updatePointerCoords(payload))
+    }
 
-    window.addEventListener('mousemove', updateMousePosition);
-    window.addEventListener('touchmove', updateTouchPosition, { passive: true });
-    window.addEventListener('touchstart', updateTouchPosition, { passive: true });
+    const scrollListener = (e)=>{
+      // 716 for work section
+      // console.log(e.target.defaultView.pageYOffset);
+      
+      if(e.target.defaultView.pageYOffset === 0){
+        dispatch(toggleVisibility(false))
+      }else{
+        dispatch(toggleVisibility(true))
+      }
+    }
 
-    // Simulate loading
-    const timer = setTimeout(() => setLoading(false), 2000);
+    window.addEventListener("mousemove", updateMousePosition)
+    window.addEventListener("scroll", scrollListener)
 
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-      window.removeEventListener('touchmove', updateTouchPosition);
-      window.removeEventListener('touchstart', updateTouchPosition);
-      clearTimeout(timer);
-    };
-  }, []);
+    return ()=>{
+      window.removeEventListener("mousemove", updateMousePosition)
+      window.removeEventListener("scroll", scrollListener)
+    }
+    
+  }, [])
 
-  if (loading) {
-    return (
-      <div className="z-50 bg-black h-screen w-full fixed flex flex-col justify-center items-center">
-        <Spinner />
-      </div>
-    );
+  useEffect(()=>{
+      dispatch(toggleLoader(true))
+      let timer = setTimeout(() => dispatch(toggleLoader(false)), 2000);
+      return () => {
+        clearTimeout(timer);
+      }
+
+  }, [])
+
+  const variants = {
+    default:{
+      x:pointerCoords.x - 14,
+      y:pointerCoords.y - 14,
+      background:"transparent"
+    },
+    larger:{
+      height: 150,
+      width:150,
+      x:pointerCoords.x - 75,
+      y:pointerCoords.y - 75,
+      backgroundColor:"white",
+      mixBlendMode:"difference"
+    }
   }
 
   return (
-    <div className="bg-black text-white overflow-x-hidden">
-      {/* 3D Background Scene */}
-      <Scene3D mousePosition={mousePosition} />
+    <>
+    
+    {loader ? <div key="loader" className={`z-10 bg-black bg-opacity-40 h-full w-full fixed flex flex-col justify-center items-center `}>
+      <Spinner/>
+    </div> : <></>}
+    <div key={'App'} className={``} class={ mode ? 'dark' : '' }>
+    
       
-      {/* Custom Cursor */}
-      <div
-        className="fixed w-4 h-4 bg-white rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100"
-        style={{
-          left: `${mousePosition.x}px`,
-          top: `${mousePosition.y}px`,
-          transform: 'translate(-50%, -50%)'
-        }}
+      <motion.div 
+          className='bg-slate-800 dark:bg-gray-200 h-7 w-7 rounded-full fixed z-10 top-0 left-0 pointer-events-none'
+          variants={variants}
+          animate={cursorVariant}
       />
-
-      {/* Content */}
-      <main className="relative z-10">
-        <HeroSection globalMousePosition={mousePosition} />
-        <ExperienceSection />
-        <ProjectsSection />
-        <ArticlesSection />
-        <TechStackSection />
-        
-        {/* Footer */}
-        <footer className="py-12 px-6 border-t-2 border-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 font-mono text-sm">
-                © 2026 SHIVANG VORA. ALL RIGHTS RESERVED.
-              </p>
-              <p className="text-gray-400 font-mono text-sm">
-                DESIGNED & DEVELOPED WITH ❤️
-              </p>
-            </div>
-          </div>
-        </footer>
-      </main>
-    </div>
+        { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} />}
+        {/* { loader ? <></> : <Navbar onHomeClick={scrollToHome} onWorkClick={scrollToWork} onProjectsClick={scrollToProjects} onStackClick={scrollToStack} onResumeClick={scrollToResume} onPuzzleClick={scrollToPuzzle}/>} */}
+      
+      {/* <div className={`absolute z-10 bg-black w-full h-[100px] duration-300  ${blackBar ? 'top-[0px]' : '-top-[100px]'}`}></div> */}
+      
+      <div key={'container'} className={`flex flex-col`}>
+        <div ref={homeRef} className=''><Home/></div>
+        {/* <div className='bg-black bg-cover w-100 h-[770px]'><div className='flex flex-col font-minecraft justify-center items-center h-full text-gray-200 text-2xl'> Keep Scrolling Down To Continue...</div></div> */}
+        <div ref={workRef}><Work/></div>
+        {/* <div ref={resumeRef}><Resume/></div> */}
+        <div ref={projectsRef}><Projects/></div>
+        <div ref={stackRef}><Stack onProjectsClick={scrollToProjects}/></div>
+        {/* <div ref={puzzleRef}><PathMatrix/></div> */}
+        {/* <div className='fixed z-[100] bottom-1 w-full'><CustomToast/></div> */}
+        </div>
+    </div></>
   );
 }
 
 export default App;
+
+//responsive status
+// navbar - done
+// home - done
+// work 
+// project

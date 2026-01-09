@@ -9,6 +9,7 @@ import {
 	mdiLanguageHtml5,
 	mdiGit,
 	mdiGithub,
+	mdiFlask,
 	mdiNodejs,
 } from "@mdi/js";
 import Icon from "@mdi/react";
@@ -17,6 +18,8 @@ import {BiLogoMongodb, BiLogoDjango, BiLogoDocker, BiLogoFlutter, BiLogoGmail, B
 import {TbBrandRedux, TbBrandVscode} from 'react-icons/tb';
 import {SiMysql, SiPostgresql, SiTypescript, SiNextdotjs, SiDart, SiLinkedin, SiAndroid, SiAndroidstudio, SiSocketdotio, SiTensorflow} from 'react-icons/si';
 import {GrInstagram} from 'react-icons/gr';
+import { JSXElementConstructor } from 'react';
+import { IconType } from "react-icons/lib";
 
 export type WorkItem = {
 	companyName: string,
@@ -38,16 +41,6 @@ export type Company = {
     startDate: string,
     endDate: string
 }
-
-export type Article = {
-	title:string,
-	link: string,
-	date?: string,
-	readTime?: string,
-	tags?: string[],
-	source?: string
-}
-
 export type NavbarProps = {
 	onHomeClick: () => void,
 	onWorkClick: () => void,
@@ -73,7 +66,13 @@ export interface IconsPathMapInterface {
   [key: string]:  string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal; // Or replace 'string' with the appropriate type if using icon names instead of JSX elements
 }
 export const projects:Project[] = [
-
+	{
+		name:"MedicAI",
+		description:"• Developed a real-time patient monitoring dashboard using React, Redux, and Flask-SocketIO\n• Implemented WebSocket communication between the client and server to provide real-time updates on patient data.\n• Integrated TensorFlow Keras models for predictive analytics and patient alert states.\n• Utilized Flask-SocketIO for handling WebSocket connections, room management, and message broadcasting.\n• Designed and developed a responsive user interface with React and Tailwind CSS.\n• Managed application state using Redux and React-Redux for efficient data flow and state management.\n• Configured and deployed the backend server with Flask, ensuring secure and scalable WebSocket connections.\n• Performed data preprocessing and scaling using Scikit-learn to prepare patient data for model predictions.\n• Collaborated with a cross-functional team to ensure seamless integration of frontend and backend components.",
+		stack:['typescript', 'react', 'tailwind', 'git', 'github', 'flask', 'tensorflow', 'socketio', 'redux' ],
+		image:"medicai.png",
+		github:"https://github.com/ShivangVora1206/MedicAl"
+	},
 	{
 		name:"Security Magazine",
 		description:"Security Magazine Online is an innovative online radio platform that offers a seamless audio experience with custom waveform visualizations. Built using React, TypeScript, and Tailwind CSS, it features a user-friendly interface for playing and visualizing audio tracks. The platform supports various functionalities including audio playback with pause/play ensuring a rich and interactive listening experience. The website is a prototype for a magazine by creative director Krisha Dave and editor in chief Karim Farekh.",
@@ -87,19 +86,6 @@ export const projects:Project[] = [
 		stack:['react', 'tailwind', 'vscode', 'git', 'github', 'typescript'],
 		image:"krishadave.png",
 		github:"https://www.krishadave.com/"
-	},	{
-		name:"Subscrypt",
-		description:"Subscrypt is a Python class designed to facilitate file fragmentation and defragmentation using subpart salting and the Fernet encryption scheme from the cryptography library.",
-		stack:['python', 'vscode', 'git', 'github'],
-		image:"subscrypt.png",
-		github:"https://github.com/ShivangVora1206/subscrypt"	
-	},
-		{
-		name:"MedicAI",
-		description:"• Developed a real-time patient monitoring dashboard using React, Redux, and Flask-SocketIO\n• Implemented WebSocket communication between the client and server to provide real-time updates on patient data.\n• Integrated TensorFlow Keras models for predictive analytics and patient alert states.\n• Utilized Flask-SocketIO for handling WebSocket connections, room management, and message broadcasting.\n• Designed and developed a responsive user interface with React and Tailwind CSS.\n• Managed application state using Redux and React-Redux for efficient data flow and state management.\n• Configured and deployed the backend server with Flask, ensuring secure and scalable WebSocket connections.\n• Performed data preprocessing and scaling using Scikit-learn to prepare patient data for model predictions.\n• Collaborated with a cross-functional team to ensure seamless integration of frontend and backend components.",
-		stack:['typescript', 'react', 'tailwind', 'git', 'github', 'flask', 'tensorflow', 'socketio', 'redux' ],
-		image:"medicai.png",
-		github:"https://github.com/ShivangVora1206/MedicAl"
 	},
 	{
 		name:"Uni Assistant Android App",
@@ -108,14 +94,20 @@ export const projects:Project[] = [
 		image:"uniassistantandroid.png",
 		github:""
 	},
-	// {
-	// 	name:"Uni Assistant script",
-	// 	description:"This is a simple tool to help students keep track of university applications currently available. It is utilizing the uni-assist APIs to fetch the data and display it in a user-friendly manner. The data is displayed in a terminal because it looks cooler.",
-	// 	stack:['python', 'vscode', 'git', 'github'],
-	// 	image:"uniassistant.png",
-	// 	github:"https://github.com/ShivangVora1206/uni-assistant"
-	// },
-
+	{
+		name:"Uni Assistant script",
+		description:"This is a simple tool to help students keep track of university applications currently available. It is utilizing the uni-assist APIs to fetch the data and display it in a user-friendly manner. The data is displayed in a terminal because it looks cooler.",
+		stack:['python', 'vscode', 'git', 'github'],
+		image:"uniassistant.png",
+		github:"https://github.com/ShivangVora1206/uni-assistant"
+	},
+	{
+		name:"Subscrypt",
+		description:"Subscrypt is a Python class designed to facilitate file fragmentation and defragmentation using subpart salting and the Fernet encryption scheme from the cryptography library.",
+		stack:['python', 'vscode', 'git', 'github'],
+		image:"subscrypt.png",
+		github:"https://github.com/ShivangVora1206/subscrypt"	
+	},
 	{
 		name:"Image Annotation Tool",
 		description:"This component is a comprehensive solution for adding, managing, and interacting with annotations on images within a web application, integrating various external libraries and custom components for a rich user experience.",
@@ -123,62 +115,62 @@ export const projects:Project[] = [
 		image:"imageannotation.png",
 		github:"https://github.com/ShivangVora1206/Image-Annotation"
 	},
-	// {
-	// 	name:"Portfolio Website",
-	// 	description:"This is the portfolio website you are currently viewing. It is a single page application built using React, Tailwind CSS, and Redux. The website is designed to be responsive and user-friendly.",
-	// 	stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git', 'github', 'docker', 'typescript'],
-	// 	image:"portfolio.png",
-	// 	github:"https://github.com/ShivangVora1206/Portfolio-App"
-	// },
-	// {
-	// 	name:"Blockchain Supply Chain Project",
-	// 	description:"Objective was to track the supply chain of military goods and equipment on an open ledger system. Blockchain fundamentals implemented using Python and FastAPI. Frontend built using MERN stack with Android application developed using Java and Retrofit",
-	// 	stack:['python', 'flask', 'android', 'androidstudio', 'mongodb', 'git', 'github'],
-	// 	image:"military_blockchain.png",
-	// 	github:"https://github.com/ShivangVora1206/DrugTracker"
-	// },
-	// {
-	// 	name:"GA Pilot App",
-	// 	description:"GA - Pilot from General Aeronautics is an app which is planned for Drone Pilots.  Merged API calls using RxJava observables for optimized performance for Mobile development. Added push notifications feature using OneSignal and Firebase Cloud Messaging. Implemented crucial bug fixes to enhance the app's stability and user experience",
-	// 	stack:['java', 'android', 'androidstudio', 'git', 'github'],
-	// 	image:"gapilot.png",
-	// 	github:"https://play.google.com/store/apps/details?id=com.ga.ga_app"
-	// },
-	// {
-	// 	name:"GA Technician App",
-	// 	description:" The technician app is designed to support the technicians with the repairs and maintenance of the drones.  Created the entire project from scratch as the primary developer. Implemented OTP-based login authentication for secure user access. Integrated APIs using Retrofit to fetch and display real-time data. Incorporated Recycler Views within tab layouts and utilized bottom sheet fragments for smooth navigation",
-	// 	stack:['java', 'android', 'androidstudio', 'git', 'github'],
-	// 	image:"gatechnician.png",
-	// 	github:"https://play.google.com/store/apps/details?id=com.ga.gatechnician"
-	// },
-	// {
-	// 	name:"Repartee Chat Application",
-	// 	description:"For users who prefer to conduct discussions in their private spaces, there is an application called Repartee.  With a dependable socket.io connection, users may send and receive messages one-to-one or in rooms containing multiple users. All of their crucial chats are securely kept on a MongoDB database at the backend with NodeJS APIs. New users can set up a profile with their preferred display image and begin communicating with the groups they belong to. Users can have a seamless experience without having to log in each time thanks to a persistent authorization mechanism.",
-	// 	stack:['react', 'node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
-	// 	image:"repartee.png",
-	// 	github:"https://github.com/ShivangVora1206/Repartee-chat-app"
-	// },
-	// {
-	// 	name:"Alder Alarm",
-	// 	description:"With the help of the app Alder Alarm, users may set alarms and reminders down to the minute. Users can use many devices at once to access the application, and they will all concurrently receive alarm alerts. Uses an indexed MongoDB database to provide lightning-fast query response times. Adler Alarm makes it easy for a user to keep track of all the alarms from the interactive user interface and users can also delete alarms as per necessity. ",
-	// 	stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
-	// 	image:"alder.png",
-	// 	github:"https://github.com/ShivangVora1206/alarmApp"
-	// },
-	// {
-	// 	name:"E - Commerce App",
-	// 	description:"An E-commerce web-application with Email user verification and MongoDB database. Users can create an account as a customer or an admin. Admin users have specialized privileges to add or delete a product from inventory. A regular customer can add or delete products from a cart and also manipulate the quantity of a product from their cart.",
-	// 	stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
-	// 	image:"ecommerce.png",
-	// 	github:"https://github.com/ShivangVora1206/ECommerce-app"
-	// },
-	// {
-	// 	name:"NoxLog",
-	// 	description:"A virtualized journaling application where users can add their regular diary entries. This application can substitute the need for maintaining a physical bedside diary for people who have a habit of journaling their days on a regular basis. The inner journal paging application is designed to have a darker theme to imitate the usual nighttime conditions of a person who writes their diary entries at the end of the day.",
-	// 	stack:['node', 'html', 'css', 'javascript', 'git', 'github'],
-	// 	image:"noxlog.png",
-	// 	github:"https://github.com/ShivangVora1206/NoxLog"
-	// },
+	{
+		name:"Portfolio Website",
+		description:"This is the portfolio website you are currently viewing. It is a single page application built using React, Tailwind CSS, and Redux. The website is designed to be responsive and user-friendly.",
+		stack:['react', 'tailwind', 'redux', 'javascript', 'vscode', 'git', 'github', 'docker', 'typescript'],
+		image:"portfolio.png",
+		github:"https://github.com/ShivangVora1206/Portfolio-App"
+	},
+	{
+		name:"Blockchain Supply Chain Project",
+		description:"Objective was to track the supply chain of military goods and equipment on an open ledger system. Blockchain fundamentals implemented using Python and FastAPI. Frontend built using MERN stack with Android application developed using Java and Retrofit",
+		stack:['python', 'flask', 'android', 'androidstudio', 'mongodb', 'git', 'github'],
+		image:"military_blockchain.png",
+		github:"https://github.com/ShivangVora1206/DrugTracker"
+	},
+	{
+		name:"GA Pilot App",
+		description:"GA - Pilot from General Aeronautics is an app which is planned for Drone Pilots.  Merged API calls using RxJava observables for optimized performance for Mobile development. Added push notifications feature using OneSignal and Firebase Cloud Messaging. Implemented crucial bug fixes to enhance the app's stability and user experience",
+		stack:['java', 'android', 'androidstudio', 'git', 'github'],
+		image:"gapilot.png",
+		github:"https://play.google.com/store/apps/details?id=com.ga.ga_app"
+	},
+	{
+		name:"GA Technician App",
+		description:" The technician app is designed to support the technicians with the repairs and maintenance of the drones.  Created the entire project from scratch as the primary developer. Implemented OTP-based login authentication for secure user access. Integrated APIs using Retrofit to fetch and display real-time data. Incorporated Recycler Views within tab layouts and utilized bottom sheet fragments for smooth navigation",
+		stack:['java', 'android', 'androidstudio', 'git', 'github'],
+		image:"gatechnician.png",
+		github:"https://play.google.com/store/apps/details?id=com.ga.gatechnician"
+	},
+	{
+		name:"Repartee Chat Application",
+		description:"For users who prefer to conduct discussions in their private spaces, there is an application called Repartee.  With a dependable socket.io connection, users may send and receive messages one-to-one or in rooms containing multiple users. All of their crucial chats are securely kept on a MongoDB database at the backend with NodeJS APIs. New users can set up a profile with their preferred display image and begin communicating with the groups they belong to. Users can have a seamless experience without having to log in each time thanks to a persistent authorization mechanism.",
+		stack:['react', 'node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
+		image:"repartee.png",
+		github:"https://github.com/ShivangVora1206/Repartee-chat-app"
+	},
+	{
+		name:"Alder Alarm",
+		description:"With the help of the app Alder Alarm, users may set alarms and reminders down to the minute. Users can use many devices at once to access the application, and they will all concurrently receive alarm alerts. Uses an indexed MongoDB database to provide lightning-fast query response times. Adler Alarm makes it easy for a user to keep track of all the alarms from the interactive user interface and users can also delete alarms as per necessity. ",
+		stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
+		image:"alder.png",
+		github:"https://github.com/ShivangVora1206/alarmApp"
+	},
+	{
+		name:"E - Commerce App",
+		description:"An E-commerce web-application with Email user verification and MongoDB database. Users can create an account as a customer or an admin. Admin users have specialized privileges to add or delete a product from inventory. A regular customer can add or delete products from a cart and also manipulate the quantity of a product from their cart.",
+		stack:['node', 'mongodb', 'html', 'css', 'javascript', 'socketio', 'git', 'github'],
+		image:"ecommerce.png",
+		github:"https://github.com/ShivangVora1206/ECommerce-app"
+	},
+	{
+		name:"NoxLog",
+		description:"A virtualized journaling application where users can add their regular diary entries. This application can substitute the need for maintaining a physical bedside diary for people who have a habit of journaling their days on a regular basis. The inner journal paging application is designed to have a darker theme to imitate the usual nighttime conditions of a person who writes their diary entries at the end of the day.",
+		stack:['node', 'html', 'css', 'javascript', 'git', 'github'],
+		image:"noxlog.png",
+		github:"https://github.com/ShivangVora1206/NoxLog"
+	},
 	// {
 	// 	name:"TODO App",
 	// 	description:"Discover seamless task management with our HTML, CSS, and JS-powered Todo app. Leveraging a Node.js server and Mongoose, tasks are securely stored and retrieved from a MongoDB database. Experience organized productivity at your fingertips.",
@@ -194,20 +186,20 @@ export const projects:Project[] = [
 	// 	image:"pomodoro.png",
 	// 	github:"https://github.com/ShivangVora1206"
 	// },
-	// {
-	// 	name:"Project ASA",
-	// 	description:"An attendance visualization solution for parents and students to view their attendance in detail using only their PRN. Uses Google Sheets API along with a FastAPI application to fetch, parse and provide the data. The dashboard is designed to be simple and easy to understand using color coded charts and numeric values to make it easy for a student or a parent to understand the data",
-	// 	stack:['python', 'flask', 'html', 'css', 'javascript', 'git'],
-	// 	image:"projectasa.png",
-	// 	github:"https://github.com/ShivangVora1206"
-	// },
-	// {
-	// 	name:"Affinity",
-	// 	description:"Objective was to understand the personality of a user to match them with people having similar personalities. Constructed Ocean personality profile of the users using KNN Machine Learning algorithm.",
-	// 	stack:['python', 'java', 'html', 'css', 'mysql', 'git'],
-	// 	image:"affinity.png",
-	// 	github:"https://github.com/ShivangVora1206"
-	// },
+	{
+		name:"Project ASA",
+		description:"An attendance visualization solution for parents and students to view their attendance in detail using only their PRN. Uses Google Sheets API along with a FastAPI application to fetch, parse and provide the data. The dashboard is designed to be simple and easy to understand using color coded charts and numeric values to make it easy for a student or a parent to understand the data",
+		stack:['python', 'flask', 'html', 'css', 'javascript', 'git'],
+		image:"projectasa.png",
+		github:"https://github.com/ShivangVora1206"
+	},
+	{
+		name:"Affinity",
+		description:"Objective was to understand the personality of a user to match them with people having similar personalities. Constructed Ocean personality profile of the users using KNN Machine Learning algorithm.",
+		stack:['python', 'java', 'html', 'css', 'mysql', 'git'],
+		image:"affinity.png",
+		github:"https://github.com/ShivangVora1206"
+	},
 	
 ]
 
@@ -221,16 +213,9 @@ export const navbarLogo:string = "svlogowhite-no-bg.png";
 export const resumeLink:string = "Shivang_Vora_Resume_Web.pdf";
 export const firstName:string = "Shivang";
 export const lastName:string = "Vora";
-export const aboutText:string ="Allow me to introduce myself, I'm Shivang Vora, a software engineer with a profound love for exploring the vast realm of technology and crafting innovative applications. I find immense joy in staying at the forefront of emerging technologies, constantly seeking new challenges to broaden my skill set and push the boundaries of what I can achieve. There's nothing quite like the satisfaction of transforming ideas into functional and user-friendly solutions.";
+export const aboutText:string ="Allow me to introduce myself—I'm Shivang Vora, a software engineer with a profound love for exploring the vast realm of technology and crafting innovative applications. I find immense joy in staying at the forefront of emerging technologies, constantly seeking new challenges to broaden my skill set and push the boundaries of what I can achieve. There's nothing quite like the satisfaction of transforming ideas into functional and user-friendly solutions.";
 
 export const colorCodes:string[] = ['bg-red-600', 'bg-orange-600', 'bg-yellow-500', 'bg-green-600', 'bg-teal-600', 'bg-blue-600', 'bg-indigo-600'];
-
-export const articles:Article[] = [
-{title:"A Developer's Guide to Test Case Generation with Genetic Algorithms", link:'https://dev.to/shivangvora1206/a-developers-guide-to-test-case-generation-with-genetic-algorithms-4mef', source:'dev.to'},
-{title:'Disruption and Restoration: A Python Solution for Fragmenting and Defragmenting Files.', link:'https://dev.to/shivangvora1206/disruption-and-restoration-a-python-solution-for-fragmenting-and-defragmenting-files-ech', source:'dev.to'},
-{title:'Unlocking the Secrets of Mobile Document Scanning: A Dive into Linear Algebra and Computer Vision', link:'https://www.linkedin.com/posts/shivang-vora-1206_computervision-opencv-python-activity-7401168221044715520-ASKc?utm_source=share&utm_medium=member_desktop&rcm=ACoAACxZz9oBMPqqFNS4-w9i6gaWTjmxDdUTdeU', source:'linkedin.com'},
-{title:'Journey into Distributed Databases with YugabyteDB', link:'https://www.linkedin.com/posts/shivang-vora-1206_distributeddatabases-yugabytedb-postgresql-activity-7399171275006410753-6trA?utm_source=share&utm_medium=member_desktop&rcm=ACoAACxZz9oBMPqqFNS4-w9i6gaWTjmxDdUTdeU', source:'linkedin.com'},
-]
 
 export const companyDetails:Company[] = [
 	{
@@ -348,6 +333,7 @@ export const certificates = [
 		link: "https://www.udemy.com/certificate/UC-9419dc0f-5c2c-4fbf-a9f5-b93b73a5499b/",
 	},
 ]
+
 
 export const iconsPathMap:IconsPathMapInterface = {
 	python: mdiLanguagePython,
