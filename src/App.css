@@ -1,3 +1,243 @@
-/* * {
+/* Urban Brutalist Portfolio Styles */
+
+* {
   cursor: none;
-} */
+}
+
+/* Brutalist Typography */
+.brutalist-text {
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+/* Glitch Effect */
+.text-glitch {
+  position: relative;
+  color: #ffffff;
+}
+
+.text-glitch::before,
+.text-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text-glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00de;
+  animation: glitch-1 0.3s infinite;
+}
+
+.text-glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9;
+  animation: glitch-2 0.3s infinite;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: inset(67% 0 26% 0);
+  }
+  20% {
+    clip-path: inset(6% 0 87% 0);
+  }
+  40% {
+    clip-path: inset(59% 0 8% 0);
+  }
+  60% {
+    clip-path: inset(2% 0 95% 0);
+  }
+  80% {
+    clip-path: inset(78% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(27% 0 34% 0);
+  }
+}
+
+/* Chromatic Aberration on Hover */
+.chromatic-hover {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.chromatic-hover:hover {
+  text-shadow: 
+    -2px -2px 0 rgba(255, 0, 0, 0.7),
+    2px 2px 0 rgba(0, 255, 255, 0.7);
+}
+
+/* Brutalist Links */
+.brutalist-link {
+  position: relative;
+  display: inline-block;
+  padding: 2px 0;
+  overflow: hidden;
+}
+
+.brutalist-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.brutalist-link:hover::after {
+  transform: translateX(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+}
+
+/* Selection */
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+::-moz-selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility Classes */
+.border-brutalist {
+  border: 4px solid #ffffff;
+  box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.2);
+}
+
+.border-brutalist:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Image Hover Effect */
+.image-brutalist {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-brutalist::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.4) 50%, 
+    transparent 100%
+  );
+  transition: left 0.5s ease;
+}
+
+.image-brutalist:hover::before {
+  left: 100%;
+}
+
+/* Text Reveal Animation */
+@keyframes text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-reveal {
+  animation: text-reveal 0.8s ease-out forwards;
+}
+
+/* Grid Background Effect */
+.grid-background {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Loading Animation */
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.pulse-animation {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
